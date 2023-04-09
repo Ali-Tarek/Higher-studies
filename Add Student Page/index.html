@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+        <title>Responsive WebPage</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+             function containsNumbers(str) {
+                return (!/^[A-Za-z]+$/.test(str));
+            }
+        </script>
+
+    </head>
+
+
+    <body>
+
+
+        <nav class="nav-container">
+            <ul class="nav-items">
+                <li>
+                    <a href = '#'>Home Page</a>
+                </li>
+                <li>
+                    <a href = '#'>Add Student</a>
+                </li>
+                <li>
+                    <a href = '#'>Page 2</a>
+                </li>
+                <li>
+                    <a href = '#'>Page 3 </a>
+                </li>
+                <li>
+                    <a href = '#'>Page 4 </a>
+                </li>
+                <li>
+                    <a href = '#'>Page 5</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="row">
+            <div class="col-1 page">
+                 <h1>Welcome to FCAI Registration Page</h1>
+                <h2>
+                   To Add a new student Kindly fill this form 
+                </h2>
+                <img src="Cairo_University_Crest.png" alt="Cairo-university Logo">
+            </div>
+            
+            <div class="col-2">
+                <form class="SignUp" onsubmit="return validateFrom();">
+                    <h2 style="color:#0C0909">
+                        New Student Form 📃
+                    </h2>
+                    <div class="Form">
+                        <div class="item fname">
+                            <label   for="fname">First name</label><br>
+                            <input   type="text" id="fname" name="fname" required minlength="3">
+                            <i id="fnameValid">❌</i>
+                        </div>
+
+                      
+                        <div class="item lname">
+                            <label  for="lname">Last name</label><br>
+                            <input  type="text" id="lname" name="lname" required minlength="3">
+                            <i id="lnameValid">❌</i>
+                        </div>
+                        
+                        <div class="item ID">
+                            <label for="ID">ID</label><br>
+                            <input type="number" id="ID" name="ID"  >
+                            <i id="IDValid">❌</i>
+                        </div>
+                        
+                        <div class="item Date">
+                            <label for="Date-Birth">Date Of Birth</label><br>
+                            <input type="date" id="Date_Birth" name='Date_Birth'><br>
+                        </div>
+                        
+                        <div class="item Uni">
+                            <label for="Uni">University </label><br>
+                            <input type="text" id="Uni" name="Uni">
+                            <i id="UniValid">❌</i>
+                        </div>
+                       
+                        <div class="item gender">
+                            <label for="Gender">Gender</label><br>
+                            <div class="radio block">
+                                <input id="Male" class="toggle toggle-left" name="gender" value="Male" type="radio" checked>
+                                <label for="Male" class="btn">Male</label>
+                                <input id="Female" class="toggle toggle-right" name="gender" value="Female" type="radio">
+                                <label for="Female" class="btn">Female</label>
+                            </div>
+                        </div>
+                     
+                        <div class="item Dept">
+                            <label  for="Dept" id='Department'>Department</label>
+                            <select name='Dept'  id='Dept' >
+                                <option value="" hidden >Choose Department</option>
+                                <option value="AI"> Artificial Intelligence </option>
+                                <option value="DS"> Decision Support </option>
+                                <option value="CS"> Computer Science </option>
+                                <option value="IT"> Information Technology </option>
+                                <option value="IS"> IS </option>
+                            </select><br>
+                        </div>
+                    
+                       
+    
+                        <div class="item status">
+                            <label for="Status" >Status </label><br>
+                            <div class="radio block">
+                                <input type="radio" id="Active" name="Status" value="Active" >
+                                <label for="Active" class="btn">Active</label>
+                                <input type="radio" id="Inactive" name="Status" value="Inactive" checked>
+                                <label for="Inactive"class="btn">Inactive</label><br>
+                            </div>
+                          
+                        </div>
+                      
+                        <div class="item course-1">
+                            <label  for="course-1" id='course'>Course-1</label>
+                            <select name='course-1 '  name='course-1' id='course-1'>
+                                <option value="" hidden >Choose Course</option>
+                                <option value="logic"> Logic Design </option>
+                                <option value="M1"> Math1 </option>
+                                <option value="M2"> Math2 </option>
+                                <option value="CS"> CS </option>
+                                <option value="ST2"> Stat2 </option>
+                                <option value="AI"> Artificial Intelligence </option>
+                                <option value="DS"> Data Structure </option>
+            
+                            </select>
+                        </div>
+    
+                        <div class="item course-2">
+                            <label id='course' for="course-2">Course-2</label>
+                            <select name='course-2 ' id='course-2'>
+                                <option value="" hidden >Choose Course</option>
+                                <option value="logic"> Logic Design </option>
+                                <option value="M1"> Math1 </option>
+                                <option value="M2"> Math2 </option>
+                                <option value="CS"> CS </option>
+                                <option value="ST2"> Stat2 </option>
+                                <option value="AI"> Artificial Intelligence </option>
+                                <option value="DS"> Data Structure </option>
+            
+                            </select>
+                        </div>
+    
+                        <div class="item course-3">
+                            <label id='course' for="course-3">Course-3</label>
+                            <select  name='course-3' id='course-3'>
+                                <option value="" hidden >Choose Course</option>
+                                <option value="logic"> Logic Design </option>
+                                <option value="M1"> Math1 </option>
+                                <option value="M2"> Math2 </option>
+                                <option value="CS"> CS </option>
+                                <option value="ST2"> Stat2 </option>
+                                <option value="AI"> Artificial Intelligence </option>
+                                <option value="DS"> Data Structure </option>
+                            </select>
+                        </div>
+    
+                    </div>
+                    <div class="submit">
+                        <input type="submit"  id="submit">
+                    </div>
+                    <script>
+                        function validateFrom(){
+                            return 
+                        }
+                       
+                        const sub = document.getElementsByClassName("SignUp");
+                        console.log(sub[0]);
+                        sub[0].addEventListener("submit" , (e)=>{
+                            e.preventDefault();
+                            
+                            if(document.getElementById("fnameValid").style.display == 'block')
+                            {
+                                alert("First Name is invalid ! Valid name must contains no symbols or digits");
+                                return;
+                            }
+                            if(document.getElementById("lnameValid").style.display == 'block')
+                            {
+                                
+                                alert("Last name is invalid ! Valid name must contains no symbols or digits");
+                                return;
+                            }
+                            if(document.getElementById("IDValid").style.display == 'block')
+                            {
+                                alert("ID is Invalid ! Valid ID must starts with 20 and contains 8 digits");
+                                return;
+                            }
+                            if(document.getElementById("UniValid").style.display == 'block')
+                            {
+                                alert("University Name is invalid ! it must contains no symbols or digits and contains 5+ characters")
+                                return
+                            }
+                            const course_1 = document.getElementById("course-1").value
+                            const course_2 = document.getElementById("course-2").value
+                            const course_3 = document.getElementById("course-3").value
+
+                            if(course_1 == course_2 || course_2 == course_3 || course_1 == course_3)
+                            {
+                                alert("Please choose differnect courses");
+                                return;
+                            }
+                            const doc = document.querySelector('input[name="gender"]:checked')
+                            const status = document.querySelector('input[name="Status"]:checked')
+                            let person = {}
+                            person.fname = e.currentTarget.fname.value
+                            person.lname= e.currentTarget.lname.value;
+                            person.ID = e.currentTarget.ID.value
+                            person.Date = e.currentTarget.Date_Birth.value
+                            person.Uni = e.currentTarget.Uni.value
+                            person.Gender = doc.value;
+                            person.Status= status.value;
+                            person.Dept = document.getElementById('Dept').value;
+                            person.Course_1=course_1;
+                            person.course_2 = course_2;
+                            person.course_3 = course_3;
+
+                            console.log(person);
+                            alert("Done");
+                        })
+             
+                     </script>
+                </form>
+            </div>
+            
+            
+
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+
+</html>

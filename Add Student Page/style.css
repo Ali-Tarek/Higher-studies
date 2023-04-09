@@ -1,0 +1,181 @@
+*{
+    box-sizing: border-box;
+}
+
+
+
+
+
+.nav-items{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #24527A;
+    list-style:none;
+    gap:40px;
+    border-radius: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding:15px;
+}
+
+
+.nav-items a{
+    padding:10px;
+    color:#ffffff;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+
+.item{
+    display :flex;
+    padding:5px;
+    gap:13px
+}
+
+
+
+
+form{
+    padding: 40px;
+    min-width: 300px;
+    max-width: 380px;
+    box-shadow: 0 11px 15px -7px rgb(0 0 0 / 20%), 0 24px 38px 3px rgb(0 0 0 / 14%), 0 9px 46px 8px rgb(0 0 0 / 12%);
+    margin-bottom: 5px;
+
+}
+
+
+
+
+label{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+.submit input
+{
+    display: inline-block;
+    border: 0;
+    font-size: 20px;
+    font-weight: 100;
+    color: #fdfdfd;
+    cursor: pointer;
+    background-color: #24527A;
+    border-radius: 3px;
+    padding:10px;
+    white-space: nowrap;
+    margin-top: 20px;
+    margin-left: 110px;
+    
+    
+}
+
+
+.Form input{
+    
+    border-radius: 6px;
+    font-size: 12px;
+    background: #fbfbfb;
+    border: 1px solid transparent;
+    height: 20px;
+    box-shadow: 0 0 0 1px #dddddd, 0 2px 4px 0 rgb(0 0 0 / 7%), 0 1px 1.5px 0 rgb(0 0 0 / 5%);
+    
+
+}
+input:focus{
+    border: 2px dotted #000;
+    border-radius: 4px;
+    
+}
+.submit input:hover {
+    background-color: #e6375a;
+    background-image: none!important;
+}
+
+form h2{
+    color:#e6375a;
+    text-align: center;
+}
+
+.btn{
+    color:rgb(250, 250, 250);
+    display: inline-block;
+    cursor: pointer;
+    padding: 0px 10px;
+}
+input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+    display: none;
+  }
+
+ .radio input:checked + label{
+    background: #24527A;
+  }
+
+
+  .radio {
+    background-color: #000000;
+    border: solid 1px #332f35; 
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+.main-container{
+    display: flex;
+}
+.page{
+    margin:auto;
+    padding:20px;
+    text-align: center;
+}
+#course , #Department
+{
+    margin-top: 5px;
+}
+
+select{
+    -webkit-appearance: none;
+    padding: 7px 0px 7px 12px;
+    border: 1px solid #d1cece;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 1px 3px -2px #4f5157;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 150ms ease;
+
+}
+
+#fnameValid , #lnameValid , #IDValid , #UniValid{
+    display: none;
+}
+
+
+[class*="col-"] {
+    float:left;
+}
+
+.col-1 {width: 60%;}
+.col-2 {width: 40%;}
+
+@media only screen and (max-width: 800px) {
+    /* For desktop: */
+    [class*="col-"] {
+        width: 100%;
+    }
+    form{
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 20px;
+
+    }
+    
+  }
+ 
+
+  
