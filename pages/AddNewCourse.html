@@ -6,76 +6,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../Assets/Faculty of Computers and AI Logo.jpg" type="x-icon">
-
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../addCourse.css">
     <title>Add New Course</title>
 </head>
 
 <body>
 
     <nav class="nav-container">
-        <ul class="nav-items">
-            <li>
-                <a href = '../HomePage.html'>Home Page</a>
+        <div class="logo">
+            <a href="../HomePage.html">Higher Studies</a>
+        </div>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="../HomePage.html" class="nav-link">Home Page</a>
             </li>
-            <li>
-                <a href = 'Add new Studnet.html'>Add Student</a>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Students</a>
+                <ul class="dropdown">
+                    <li class="dropdown-item"><a href="Add new Studnet.html" class="nav-link">Add</a></li>
+                    <li class="dropdown-item"><a href="View Students.html" class="nav-link">view</a></li>
+                </ul>
             </li>
-            <li>
-                <a href = 'AddNewCourse.html'>Add New Course</a>
-            </li>
-            <li>
-                <a href = 'Edit Student.html'>Edit Exisiting Student </a>
-            </li>
-            <li>
-                <a href = 'View Students.html'>View All Students </a>
-            </li>
-            <li>
-                <a href = 'courses_table.html'>Avaliable Courses</a>
-            </li>
-            <li>
-                <a href = 'CourseRegistrationPage.html'>Course Registration</a>
+            <li class="nav-item">
+                <a href="#" class="nav-link">Courses</a>
+                <ul class="dropdown">
+                    <li class="dropdown-item"><a href="AddNewCourse.html" class="nav-link">add</a></li>
+                    <li class="dropdown-item"><a href="courses_table.html" class="nav-link">view</a></li>
+                    <li class="dropdown-item"><a href="CourseRegistrationPage.html" class="nav-link">register</a></li>
+                </ul>
             </li>
         </ul>
     </nav>
 
 
-    <div>
+    <div class="container">
+        <h1>Add New Course</h1>
         <form action="#" method="post">
-            <h1>Add New Course</h1>
-            <div>
-                <div>
+            <div class="form-container">
+                <div class="form-control">
                     <label for="id">Id</label>
-                    <input type="text" name="id" id="id">
+                    <div class="wrapper">
+                        <input type="text" name="id" id="id">
+                    </div>
                 </div>
-                <div>
+                <div class="form-control">
                     <label for="name">Name</label>
-                    <input type="text" name="name" id="name">
+                    <div class="wrapper">
+                        <input type="text" name="name" id="name">
+                    </div>
                 </div>
-                <div>
+                <div class="form-control">
                     <label for="department">Department</label>
-                    <input type="text" name="department" id="department">
+                    <div class="wrapper">
+                        <select name="department" id="department">
+                            <option value="1">CS</option>
+                            <option value="2">IS</option>
+                            <option value="3">DS</option>
+                            <option value="4">IT</option>
+                            <option value="5">AI</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
-                    <label for="numberOfHOurs">Number of Hours</label>
-                    <input type="number" name="numberOfHOurs" id="numberOfHOurs">
+                <div class="form-control">
+                    <label for="numberOfHOurs">Hours</label>
+                    <div class="wrapper">
+                        <input type="number" name="numberOfHOurs" id="numberOfHOurs">
+                        <span class="error">invalid Hours</span>
+                    </div>
                 </div>
-                <div>
+                <div class="form-control">
                     <label for="lectureDay">Lecture's Day</label>
-                    <select name="lectureDay" id="lectureDay">
-                        <option value="1">Monday</option>
-                        <option value="2">Tuesday</option>
-                        <option value="3">Wednesday</option>
-                        <option value="4">Thursday</option>
-                        <option value="5">Friday</option>
-                        <option value="6">Saturday</option>
-                        <option value="7">Sunday</option>
-                    </select>
+                    <div class="wrapper">
+                        <select name="lectureDay" id="lectureDay">
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
+                            <option value="7">Sunday</option>
+                        </select>
+                    </div>
                 </div>
-                <div>
+                <div class="form-control">
                     <label for="hallNumber">Hall's Number</label>
-                    <input type="number" name="hallNumber" id="hallNumber">
+                    <div class="wrapper">
+                        <input type="number" name="hallNumber" id="hallNumber">
+                    </div>
                 </div>
-                <div>
+                <div class="form-control">
                     <input type="submit" value="Add">
                 </div>
             </div>
