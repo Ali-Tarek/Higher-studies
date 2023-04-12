@@ -5,6 +5,10 @@
     font-family: 'Poppins', sans-serif
 }
 
+body{
+    width: 100%;
+}
+
 :root{
     --primary-color: #24527A;
     --secondary-color: #E0EBEB;
@@ -130,8 +134,12 @@
         height: auto;
         padding: .8rem;
     }
-    
-   
+    .nav-list.hide{
+        display: none;
+    }    
+   .nav-container .menu{
+      display: block;
+   }
    .nav-item .dropdown{
     z-index: 999;
    }
@@ -144,7 +152,7 @@
 
 /* Start add Course Form */
 .container{
-    width: 40%;
+    width: 500px;
     margin: auto;
     margin-top: 25px;
     border-radius: 10px;
@@ -162,6 +170,7 @@
     width: 100%;
     display: flex;
     padding: 1rem;
+    align-items: center;
 }
 
 .form-control label{
@@ -203,5 +212,20 @@
 .form-control input[type="submit"]:hover{
     background-color: #1d4364;
     box-shadow: none;
+}
+
+@media screen and (max-width: 574px) {
+    .container{
+        width: 300px;
+    }
+    .form-control{
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .form-control label, 
+    .form-control .wrapper{
+        width: 100%;
+    }
 }
 /* End add Course Form */
