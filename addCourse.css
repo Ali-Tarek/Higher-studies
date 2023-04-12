@@ -19,11 +19,42 @@
     height: 80px;
     background-color: var(--primary-color);
     padding: 1rem;
+    position: relative;
 }
 
 .logo{
     font-size: 2rem;
 }
+
+.nav-container .menu{
+    display: none;
+}
+.nav-container .menu{
+    position: relative;
+}
+.nav-container .menu,
+.nav-container .menu::after,
+.nav-container .menu::before{
+    content: '';
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.nav-container .menu::after,
+.nav-container .menu::before{
+    position: absolute;
+}
+
+.nav-container .menu::before{
+    bottom: 8px;
+}
+.nav-container .menu::after{
+    top: 8px;
+}
+
 .logo a{
     text-decoration: none;
     color: #fff;
@@ -52,7 +83,7 @@
     display: none;
 }
 
-.nav-item:hover .dropdown, .dropdown:hover{
+.nav-item:hover .dropdown, .dropdown:hover, .nav-item:focus-within .dropdown{
     display: block;
 }
 
@@ -86,6 +117,28 @@
     font-weight: 300;
     text-transform: capitalize;
 }
+
+
+@media screen and (max-width: 852px){
+    .nav-list{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        display: block;
+        height: auto;
+        padding: .8rem;
+    }
+    
+   
+   .nav-item .dropdown{
+    z-index: 999;
+   }
+    
+   
+}
+
 
 /* End NavBar */
 
