@@ -29,6 +29,7 @@
                 <ul class="dropdown">
                     <li class="dropdown-item"><a href="Add new Studnet.html" class="nav-link">Add</a></li>
                     <li class="dropdown-item"><a href="View Students.html" class="nav-link">view</a></li>
+                    <li class="dropdown-item"><a href="Edit Student.html" class="nav-link">Edit</a></li>
                 </ul>
             </li>
             <li class="nav-item">
@@ -50,56 +51,55 @@
                 <div class="form-control">
                     <label for="id">Id</label>
                     <div class="wrapper">
-                        <input type="text" name="id" id="id">
+                        <input type="text" name="id" id="id" autocomplete="off">
                     </div>
                 </div>
                 <div class="form-control">
                     <label for="name">Name</label>
                     <div class="wrapper">
-                        <input type="text" name="name" id="name">
+                        <input type="text" name="name" id="name" autocomplete="off">
                     </div>
                 </div>
                 <div class="form-control">
                     <label for="department">Department</label>
                     <div class="wrapper">
                         <select name="department" id="department">
-                            <option value="1">CS</option>
-                            <option value="2">IS</option>
-                            <option value="3">DS</option>
-                            <option value="4">IT</option>
-                            <option value="5">AI</option>
+                            <option value="CS">CS</option>
+                            <option value="IS">IS</option>
+                            <option value="DS">DS</option>
+                            <option value="IT">IT</option>
+                            <option value="AI">AI</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-control">
-                    <label for="numberOfHOurs">Hours</label>
+                    <label for="numberOfHours">Hours</label>
                     <div class="wrapper">
-                        <input type="number" name="numberOfHOurs" id="numberOfHOurs">
-                        <!-- <span class="error">invalid Hours</span> -->
+                        <input type="number" name="numberOfHours" id="numberOfHours" min="1" max="4">
                     </div>
                 </div>
                 <div class="form-control">
                     <label for="lectureDay">Lecture's Day</label>
                     <div class="wrapper">
                         <select name="lectureDay" id="lectureDay">
-                            <option value="1">Monday</option>
-                            <option value="2">Tuesday</option>
-                            <option value="3">Wednesday</option>
-                            <option value="4">Thursday</option>
-                            <option value="5">Friday</option>
-                            <option value="6">Saturday</option>
-                            <option value="7">Sunday</option>
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
                         </select>
                     </div>
                 </div>
                 <div class="form-control">
                     <label for="hallNumber">Hall's Number</label>
                     <div class="wrapper">
-                        <input type="number" name="hallNumber" id="hallNumber">
+                        <input type="number" name="hallNumber" id="hallNumber" min="0">
                     </div>
                 </div>
                 <div class="form-control">
-                    <input type="submit" value="Add">
+                    <input type="submit" value="Add" id="addCourse">
                 </div>
             </div>
         </form>

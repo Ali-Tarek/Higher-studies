@@ -130,12 +130,12 @@ body{
         left: 0;
         right: 0;
         background-color: var(--primary-color);
-        display: block;
+        display: none;
         height: auto;
         padding: .8rem;
     }
-    .nav-list.hide{
-        display: none;
+    .nav-list.show{
+        display: block;
     }    
    .nav-container .menu{
       display: block;
@@ -143,7 +143,7 @@ body{
    .nav-item .dropdown{
     z-index: 999;
    }
-    
+
    
 }
 
@@ -191,11 +191,16 @@ body{
     border: 2px solid #eee;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
+.form-control .wrapper input:focus, .form-control .wrapper select:focus{
+    outline: none;
+    border: 2px solid var(--primary-color);
+}
 .form-control .wrapper .error{
     color: #ff4444;
     font-size: 13px;
     font-weight: 600;
 }
+
 
 .form-control input[type="submit"]{
     width: 100%;
@@ -216,7 +221,7 @@ body{
 
 @media screen and (max-width: 574px) {
     .container{
-        width: 300px;
+        width: 400px;
     }
     .form-control{
         flex-direction: column;
