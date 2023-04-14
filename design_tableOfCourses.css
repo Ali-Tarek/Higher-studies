@@ -1,0 +1,55 @@
+html{
+    scrollbar-width: normal;
+    scrollbar-color: #24527a #ffffff;
+}
+
+.table1 {
+    overflow-y: auto;
+    height: 500px;
+}
+
+.courses{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    box-shadow:0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.courses thead tr{
+    background-color: #24527a;
+    color: #0C0909;
+    text-align: left;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.courses th,
+.courses td{
+    padding: 12px 15px;
+}
+
+.courses tbody tr{
+    border-bottom:1px solid #24527a;
+    color: #808080;
+    font-family: 'Poppins', sans-serif;
+}
+
+.courses tbody tr:nth-of-type(even){
+    background-color: #f3f3f3;
+    font-family: 'Poppins', sans-serif;
+}
+
+.courses tbody tr:last-of-type{
+    border-bottom: 2px solid #24527a;
+}
+
+h1{
+    font-weight: bold;
+    color: #24527a;
+    font-family: 'Poppins', sans-serif;
+}
