@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+
+
+<html>
+
+    <head>
+        <title>Add New Student</title>
+        <link rel="stylesheet" href="../Add Student Page/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+    </head>
+
+
+    <body>
+        <header>
+
+            <img  id='logo' src="../Add Student Page/logo.png" alt="Logo">
+            <img  id='Minilogo' src="../Add Student Page/MiniLogo.png" alt="Logo">
+            <nav>
+                
+                
+                <div class="menu ">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <span>Cairo University</span>
+                <ul class="nav-links left">
+                    <li>
+                        <a href = 'AddNewCourse.html'>Add New Course </a>
+                    </li>
+                    <li>
+                        <a href = '#'>Edit Exisiting Student </a>
+                    </li>
+                    <li>
+                        <a href = '#'>View All Students</a>
+                    </li>
+                </ul>
+        
+                <ul class="nav-links right">
+                    <li>
+                        <a href = '#'>Home Page</a>
+                    </li>
+                    <li>
+                        <a href = '#'>Add Student</a>
+                    </li>
+                    <li>
+                        <a href = 'index2.html'>Course Registration</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+    
+        <br><br>
+        <br><br>
+        <main>
+            <div class="col-1 page">
+                <h1>Welcome to FCAI Registration Page</h1>
+                <h2>
+                    To Add a new student Kindly fill this form 
+                </h2>
+                <img src="../Add Student Page/Cairo_University_Crest.png" alt="Cairo-university Logo">
+            </div>
+            <form class="SignUp" >
+                <h2 >
+                    New Student Form 📃
+                </h2>
+                <div class="Form">
+                    <div class="item fname">
+                        <label   for="fname">First name</label><br>
+                        <input   type="text" id="fname" name="fname" required minlength="3">
+                        <i id="fnameValid">❌</i>
+                    </div>
+
+                  
+                    <div class="item lname">
+                        <label  for="lname">Last name</label><br>
+                        <input  type="text" id="lname" name="lname" required minlength="3">
+                        <i id="lnameValid">❌</i>
+                    </div>
+                    
+                    <div class="item ID">
+                        <label for="ID">ID</label><br>
+                        <input type="number" id="ID" name="ID" required >
+                        <i id="IDValid">❌</i>
+                    </div>
+                    
+                    <div class="item Date">
+                        <label for="Date-Birth">Date Of Birth</label><br>
+                        <input type="date" id="Date_Birth" name='Date_Birth' required><br>
+                    </div>
+                    
+                    <div class="item Uni">
+                        <label for="Uni">University </label><br>
+                        <select name='Uni'  id='Uni' required>
+                            <option value="" hidden >Choose University</option>
+                            <option value="Cairo"> Cairo </option>
+                            <option value="Alexandria"> Alexandria </option>
+                            <option value="Tanta"> Tanta </option>
+                            <option value="Mansoura"> Mansoura </option>
+                            <option value="" hidden> Any Any Any Any Any </option>
+                        </select><br>
+                    </div>
+                   
+                    <div class="item gender">
+                        <label for="Gender">Gender</label><br>
+                        <div class="radio block">
+                            <input id="Male" class="toggle toggle-left" name="gender" value="Male" type="radio" checked>
+                            <label for="Male" class="btn">Male</label>
+                            <input id="Female" class="toggle toggle-right" name="gender" value="Female" type="radio">
+                            <label for="Female" class="btn">Female</label>
+                        </div>
+                    </div>
+                 
+                    <div class="item Dept">
+                        <label  for="Dept" id='Department'>Department</label>
+                        <select name='Dept'  id='Dept' required>
+                            <option value="" hidden >Choose Department</option>
+                            <option value="AI"> Artificial Intelligence </option>
+                            <option value="DS"> Decision Support </option>
+                            <option value="CS"> Computer Science </option>
+                            <option value="IT"> Information Technology </option>
+                            <option value="IS"> IS </option>
+                        </select><br>
+                    </div>
+                
+                    <div class="item status">
+                        <label for="Status" >Status </label><br>
+                        <div class="radio block">
+                            <input type="radio" id="Active" name="Status" value="Active" >
+                            <label for="Active" class="btn">Active</label>
+                            <input type="radio" id="Inactive" name="Status" value="Inactive" checked>
+                            <label for="Inactive"class="btn">Inactive</label><br>
+                        </div>
+                      
+                    </div>
+                  
+                    <div class="item course-1">
+                        <label  for="course-1" id='course'>Course-1</label>
+                        <select name='course-1 '  name='course-1' id='course-1'>
+                            <option value="" hidden >Choose Course</option>
+                            <option value="logic"> Logic Design </option>
+                            <option value="M1"> Math1 </option>
+                            <option value="M2"> Math2 </option>
+                            <option value="CS"> CS </option>
+                            <option value="ST2"> Stat2 </option>
+                            <option value="AI"> Artificial Intelligence </option>
+                            <option value="DS"> Data Structure </option>
+        
+                        </select>
+                    </div>
+
+                    <div class="item course-2">
+                        <label id='course' for="course-2">Course-2</label>
+                        <select name='course-2 ' id='course-2'>
+                            <option value="" hidden >Choose Course</option>
+                            <option value="logic"> Logic Design </option>
+                            <option value="M1"> Math1 </option>
+                            <option value="M2"> Math2 </option>
+                            <option value="CS"> CS </option>
+                            <option value="ST2"> Stat2 </option>
+                            <option value="AI"> Artificial Intelligence </option>
+                            <option value="DS"> Data Structure </option>
+        
+                        </select>
+                    </div>
+
+                    <div class="item course-3">
+                        <label id='course' for="course-3">Course-3</label>
+                        <select  name='course-3' id='course-3'>
+                            <option value="" hidden >Choose Course</option>
+                            <option value="logic"> Logic Design </option>
+                            <option value="M1"> Math1 </option>
+                            <option value="M2"> Math2 </option>
+                            <option value="CS"> CS </option>
+                            <option value="ST2"> Stat2 </option>
+                            <option value="AI"> Artificial Intelligence </option>
+                            <option value="DS"> Data Structure </option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="submit">
+                    <input type="submit"  id="submit">
+                </div>
+            </form>
+                
+        </main>
+            
+        <footer>
+            <p>©2023 The University of Cairo</p>
+        </footer>
+        <script src="../Add Student Page/script.js"></script>
+        <script>
+            
+        </script>
+    </body>
+
+
+</html>
