@@ -1,0 +1,182 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+/* [BEGIN] Students table */
+table {
+    border-collapse: collapse;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    font-size: 20px;
+    margin: 0px 25px;
+    width: calc(100% - 50px);
+}
+
+th,
+td {
+    padding: 20px;
+    text-align: left;
+}
+
+tr:nth-child(even) {
+    background-color: #F0F0F0;
+}
+
+.table-tools {
+    align-items: center;
+    background-color: #24527A;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    margin: 25px 25px 0px 25px;
+}
+
+.table-tools span {
+    color: #ffffff;
+    flex-grow: 1;
+    font-size: 32px;
+    margin: 25px 25px;
+}
+
+#add-student-button {
+    background-color: #ffffff;
+    border-radius: 20px;
+    color: #24527A;
+    margin-right: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+
+#add-student-button i {
+    padding-left: 10px;
+}
+
+#add-student-button:hover {
+    opacity: 0.75;
+}
+
+#search-field {
+    background-color: #ffffff;
+    border: 0px;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    outline: none;
+    padding: 10px 15px;
+}
+
+#search-button {
+    background-color: #ffffff;
+    border: 0px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    margin-right: 25px;
+    padding: 10px 15px;
+}
+
+#search-button i {
+    padding-left: 10px;
+}
+
+#status-column i {
+    margin: 8px;
+}
+
+#filter-department,
+#filter-status {
+    border: none;
+    font-size: 18px;
+    outline: none;
+    padding: 20px 20px 0px 20px;
+    width: 60px;
+}
+
+#filter-department:hover,
+#filter-status:hover {
+    cursor: pointer;
+}
+
+#actions-column {
+    text-align: center;
+}
+
+#actions-column i {
+    cursor: pointer;
+    margin-right: 10px;
+}
+/* [END] Students table */
+
+/* [START] Modals */
+#delete-modal,
+#success-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.modal-text p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.modal-actions {
+    display: flex;
+}
+
+.cancel,
+.delete,
+.okay {
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.cancel {
+    background: #24527A;
+    margin-left: 90px;
+    margin-right: auto;
+    padding: 10px 15px;
+}
+
+.delete {
+    background: #dc3545;
+    margin-right: 90px;
+}
+
+.okay {
+    background-color: #198754;
+    margin-left: 110px;
+}
+
+.cancel:hover,
+.delete:hover,
+.okay:hover {
+    opacity: 0.75;
+}
+/* [END] Modals */

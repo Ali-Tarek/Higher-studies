@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" href="../Assets/Faculty of Computers and AI Logo.jpg" type="x-icon">
+    <link rel="stylesheet" href="viewstudents.css">
+    <script src="https://kit.fontawesome.com/9f31003b6f.js" crossorigin="anonymous"></script>
+    <title>View Students</title>
+</head>
+
+<body>
+    <!-- [BEGIN] Student table -->
+    <div class="students-table">
+        <div class="table-tools">
+            <span>Students Details</span>
+            <a id="add-student-button" href="../pages/AddNewStudent.html" target="_blank">Add New Student<i
+                    class="fa-solid fa-user-plus" style="color: #24527A;"></i></a>
+            <form class="search-students">
+                <input id="search-field" type="text" placeholder="Search for a student.."
+                    title="Search by name or ID.."><button id="search-button" type="text"><i
+                        class="fa-solid fa-magnifying-glass fa-xl" style="color: #24527A;"></i></button>
+            </form>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>ID</th>
+                    <th>Department
+                        <select id="filter-department" onchange="filterByDepartment();">
+                            <option value=" ">All</option>
+                            <option value="AI">Artifical Intelligence</option>
+                            <option value="CS">Computer Science</option>
+                            <option value="DS">Decision Support</option>
+                            <option value="IS">Information Systems</option>
+                            <option value="IT">Information Technology</option>
+                        </select>
+                    </th>
+                    <th id="status-column">Status
+                        <select id="filter-status" onchange="filterByStatus();">
+                            <option value=" ">All</option>
+                            <option value=1>Active</option>
+                            <option value=0>Inactive</option>
+                        </select>
+                    </th>
+                    <th id="actions-column">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <!-- [END] Student table -->
+    <!-- [BEGIN] Deletion confirm modal -->
+    <div id="delete-modal" class="hide">
+        <div class="modal-content">
+            <div class="modal-text">
+                <h2>Delete Student</h2>
+                <p>Are you sure you want to delete this student?</p>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="cancel" onclick="closeDeleteModal()">Cancel</button>
+                <button type="button" class="delete" onclick="deleteStudent(); showSuccessModal()">Delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- [END] Deletion confirm modal -->
+    <!-- [BEGIN] Deletion success modal -->
+    <div id="success-modal" class="hide">
+        <div class="modal-content">
+            <div class="modal-text">
+                <h2>Delete Student</h2>
+                <p>Student was successfully deleted.</p>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="okay" onclick="closeSuccessModal()">Okay</button>
+            </div>
+        </div>
+    </div>
+    <!-- [END] Deletion success modal -->
+</body>
+<script src="viewstudents.js"></script>
+
+</html>
