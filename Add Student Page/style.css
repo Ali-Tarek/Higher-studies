@@ -65,7 +65,7 @@ label{
     font-weight: 100;
     color: #fdfdfd;
     cursor: pointer;
-    background-color: maroon;
+    background-color: #24527A;
     border-radius: 3px;
     padding:10px;
     white-space: nowrap;
@@ -97,7 +97,7 @@ input:focus{
 }
 
 form h2{
-    color:maroon;
+    color:#000000;
     text-align: center;
 }
 
@@ -114,7 +114,7 @@ input[type=radio] {
   }
 
  .radio input:checked + label{
-    background: maroon;
+    background: #24527A;
   }
 
 
@@ -137,6 +137,10 @@ input[type=radio] {
 #course , #Department
 {
     margin-top: 5px;
+}
+#course-1,#course-2,#course-3, #Dept,#Uni
+{
+    width: 152px;
 }
 
 select{
@@ -185,7 +189,7 @@ main{
 nav{
     display: flex;
         position: fixed;
-    background-color: maroon;
+    background-color: #24527A;
     justify-content: flex-end;
     align-items: center;
     min-height: 7vh;
@@ -268,7 +272,7 @@ nav span {
         left:0px;
         height: 93vh;
         top:7vh;
-        background-color: maroon;
+        background-color: #24527A;
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -281,7 +285,7 @@ nav span {
         right:0px;
         height: 93vh;
         top:7vh;
-        background-color: maroon;
+        background-color: #24527A;
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -316,7 +320,7 @@ nav span {
 
 footer
 {
-    background-color: maroon;
+    background-color: #24527A;
     padding: 6px;
     
 }
