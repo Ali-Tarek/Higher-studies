@@ -11,22 +11,23 @@ const navslide = ()=>{
 }
 
 
+navslide();
 
-const footer = document.querySelector('footer');
+const Students = JSON.parse(localStorage.getItem('students'));
+const AllCourses = JSON.parse(localStorage.getItem("courses"));
+const No_of_students = Students.length;
+const No_Of_Courses = AllCourses.length;
+let No_Of_Active = 0;
 
-function handleScroll() {
-  const scrollPosition = window.innerHeight + window.scrollY;
-  const documentHeight = document.body.offsetHeight;
-  const footerPosition = footer.offsetTop + footer.offsetHeight;
-
-  if (scrollPosition >= 975) {
-    footer.classList.add('show');
-  } else {
-    footer.classList.remove('show');
-  }
+for (const stu of Students) {
+    if(stu.Active )
+    {
+        No_Of_Active++;
+    }
 }
 
-window.addEventListener('scroll' , handleScroll);
-console.log(window.innerHeight);
+document.getElementById("All-Students").innerText = Number(No_of_students);
+document.getElementById("Active-Students").innerText = Number(No_Of_Active);
+document.getElementById("courses-Count").innerText = Number(No_Of_Courses);
 
-navslide();
+
