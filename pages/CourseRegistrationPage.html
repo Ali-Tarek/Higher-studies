@@ -4,7 +4,10 @@
 <head>
 
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="../CourseRegistrationPage.css">
     <link rel="shortcut icon" href="../Assets/Faculty of Computers and AI Logo.jpg" type="x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <title>Course Registration - Higher Studies</title>
 
@@ -12,101 +15,106 @@
 
 <body>
 
+    <div class="container">
 
-    <nav class="nav-container">
-        <ul class="nav-items">
-            <li>
-                <a href = '../HomePage.html'>Home Page</a>
-            </li>
-            <li>
-                <a href = 'Add new Studnet.html'>Add Student</a>
-            </li>
-            <li>
-                <a href = 'AddNewCourse.html'>Add New Course</a>
-            </li>
-            <li>
-                <a href = 'Edit Student.html'>Edit Exisiting Student </a>
-            </li>
-            <li>
-                <a href = 'View Students.html'>View All Students </a>
-            </li>
-            <li>
-                <a href = 'courses_table.html'>Avaliable Courses</a>
-            </li>
-            <li>
-                <a href = 'CourseRegistrationPage.html'>Course Registration</a>
-            </li>
-        </ul>
-    </nav>
+        <h1>Course Registration </h1>
+        <form action="#" method="post">
+            <div class="form-container">
 
-    <h1>Course Registration</h1>
+                <div class="form-control">
 
-    <div>
-        Name: Ahmed Hossam
-        <br>
-        Id: 2020355
-        <br>
-    </div>
+                    <label for="search-id">ID</label>
+                    <div class="wrapper">
 
-    <div>
-        <form action="" method="GET">
+                        <input type="text" id="input-id" style="width:90%;">
 
-            <div>
+                    </div>
+                    <button id="search-btn">Search</button>
 
-                <label for=Courses>Choose Course 1:</label>
+                </div>
 
-                <select name='Courses' id='Courses'>
+                <div class="form-control">
 
-                    <option value="logic"> Logic Design </option>
-                    <option value="M1"> Math1 </option>
-                    <option value="M2"> Math2 </option>
-                    <option value="CS"> CS </option>
-                    <option value="ST2"> Stat2 </option>
-                    <option value="AI"> Artificial Intelligence </option>
-                    <option value="DS"> Data Structure </option>
+                    <label for="name">Name</label>
+                    <div class="wrapper" id="student-name">
+                        Not Found
+                    </div>
 
-                </select>
+                </div>
 
+                <div class="form-control">
+
+                    <label for="course1">Course 1</label>
+                    <div class="wrapper">
+
+                        <select id="course1" name="course1">
+                            <!-- <option value="logic"> Logic Design </option>
+                            <option value="M1"> Math1 </option>
+                            <option value="M2"> Math2 </option>
+                            <option value="CS"> CS </option>
+                            <option value="ST2"> Stat2 </option>
+                            <option value="AI"> Artificial Intelligence </option>
+                            <option value="DS"> Data Structure </option> -->
+                        </select>
+                        <span class="error"></span>
+
+                    </div>
+                </div>
+
+                <div class="form-control">
+
+                    <label for="course2">Course 2</label>
+
+                    <div class="wrapper">
+
+                        <select id="course2" name="course2">
+                            <!-- <option value="logic"> Logic Design </option>
+                            <option value="M1"> Math1 </option>
+                            <option value="M2"> Math2 </option>
+                            <option value="CS"> CS </option>
+                            <option value="ST2"> Stat2 </option>
+                            <option value="AI"> Artificial Intelligence </option>
+                            <option value="DS"> Data Structure </option> -->
+                        </select>
+                        <span class="error"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-control">
+
+                    <label for="course3">Course 3</label>
+
+                    <div class="wrapper">
+
+                        <select id="course3" name="course3">
+                            <!-- <option value="logic"> Logic Design </option>
+                            <option value="M1"> Math1 </option>
+                            <option value="M2"> Math2 </option>
+                            <option value="CS"> CS </option>
+                            <option value="ST2"> Stat2 </option>
+                            <option value="AI"> Artificial Intelligence </option>
+                            <option value="DS"> Data Structure </option> -->
+                        </select>
+                        <span class="error"></span>
+
+                    </div>
+
+                </div>
+
+                <div class="form-control">
+                    <input type="submit" value="Register" id="register-btn"></button>
+                </div>
             </div>
-
-            <div>
-
-                <label for=Courses>Choose Course 2:</label>
-
-                <select name='Courses' id='Courses'>
-
-                    <option value="logic"> Logic Design </option>
-                    <option value="M1"> Math1 </option>
-                    <option value="M2"> Math2 </option>
-                    <option value="CS"> CS </option>
-                    <option value="ST2"> Stat2 </option>
-                    <option value="AI"> Artificial Intelligence </option>
-                    <option value="DS"> Data Structure </option>
-
-                </select>
-
-            </div>
-
-            <div>
-
-                <label for=Courses>Choose Course 3:</label>
-
-                <select name='Courses' id='Courses'>
-
-                    <option value="logic"> Logic Design </option>
-                    <option value="M1"> Math1 </option>
-                    <option value="M2"> Math2 </option>
-                    <option value="CS"> CS </option>
-                    <option value="ST2"> Stat2 </option>
-                    <option value="AI"> Artificial Intelligence </option>
-                    <option value="DS"> Data Structure </option>
-
-                </select>
-
-            </div>
-            <input type="submit">
         </form>
     </div>
+
+
+    <script src="../CourseRegistrationPage.js"></script>
+
+
 
 </body>
 
