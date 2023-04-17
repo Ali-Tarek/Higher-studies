@@ -98,7 +98,7 @@ function validateForm(e) {
     localStorage.setItem("students", JSON.stringify(students));
     console.log(JSON.parse(localStorage.getItem("student")));
 
-    alert("Done");
+    alert("New Student Added ");
     const sub = document.getElementsByClassName("SignUp");
     sub[0].reset();
 }

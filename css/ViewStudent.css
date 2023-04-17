@@ -8,78 +8,7 @@ body {
     position: relative;
 }
 
-/* [BEGIN] Navigation bar */
-nav {
-    display: flex;
-    position: fixed;
-    background-color: #24527a;
-    justify-content: flex-end;
-    align-items: center;
-    min-height: 7vh;
-    max-height: 7vh;
-    width: 100%;
-    font-family: 'poppins', sans-serif;
-    z-index: 1231;
-    top: 0;
-}
 
-#logo {
-    position: fixed;
-    width: 200px;
-    height: 150px;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    transition: width .4s ease-in-out;
-    z-index: 9999;
-}
-
-.nav-links {
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
-}
-
-.left {
-    margin-right: 300px;
-}
-
-.nav-links li {
-    list-style: none;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-#Minilogo {
-    display: none;
-    width: 150px;
-    position: fixed;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-}
-
-.menu {
-    position: fixed;
-    left: 0;
-    display: none;
-}
-
-.menu div {
-    width: 25px;
-    height: 2px;
-    background-color: rgb(255, 255, 255);
-    margin: 5px;
-}
-
-nav span {
-    display: none;
-}
 /* [END] Navigation bar */
 
 /* [BEGIN] Students table */
@@ -106,7 +35,7 @@ tr:nth-child(even) {
     background-color: #24527A;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: flex;
-    margin: 77px 25px 0px 25px;
+    margin: 0px 25px 0px 25px;
 }
 
 .table-tools span {
@@ -257,19 +186,12 @@ tr:nth-child(even) {
     opacity: 0.75;
 }
 /* [END] Modals */
-
-/* [BEGIN] Footer */
-footer {
-    background-color: #24527A;
-    bottom: 0;
-    box-sizing: border-box;
-    padding: 6px;
-    position: absolute;
-    width: 100%;
+header{
+    height:5vh;
 }
-
-footer P {
-    color: white;
-    text-align: center;
+footer{
+    margin-top: 50px;
 }
-/* [END] Footer */
+.students-table{
+    min-height: 75vh;;
+}

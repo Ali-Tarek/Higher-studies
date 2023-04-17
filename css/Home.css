@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 body {
     height: 100%;
 }
@@ -100,7 +101,10 @@ main {
     background-position: center;
     background-size: cover;
 }
-
+.Container{
+    height: 300px; 
+    width: 100%;
+}
 .img-container h1 {
     color: white;
     position: relative;
@@ -113,7 +117,6 @@ main {
     align-items: center;
     height: 320px;
     width: 100%;
-    top: 96vh;
     background-color: rgb(255, 255, 255);
 }
 
@@ -135,12 +138,13 @@ main {
     color: rgb(0, 0, 0);
 }
 
+
 footer {
-    position: relative;
+    margin-top: 45px;
+    width: 100%;
     padding: 10px;
-    top: 59vh;
     background-color: #24527a;
-}
+  }
 
 footer p {
     max-width: 210px;
