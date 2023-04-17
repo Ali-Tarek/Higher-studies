@@ -63,8 +63,18 @@ function searchbyid(){
     }
 
 }
+function isempty(){
+    if(!document.getElementById("ID").value){
+        return true;
+    }
+    return false;
+    
+}
 
 function SetData() {
+    if(isempty()){
+        return;
+    }
     let c1=document.getElementById("course-1").value;
     let c2=document.getElementById("course-2").value;
     let c3=document.getElementById("course-3").value;
@@ -106,6 +116,9 @@ function SetData() {
 }
 
 function DeleteItem(){
+    if(isempty()){
+        return;
+    }
     let flag=confirm("Are you Sure?");
     if(flag){
         let value=document.getElementById("ID").value;
