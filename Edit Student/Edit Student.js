@@ -1,21 +1,6 @@
-var student={
-    id:"20210315",
-    fname:"Mazen",
-    lname:"Khaled",
-    DOB:"2018-07-22",
-    uni:"Cairo",
-    dep:"IT",
-    course1:"DS1",
-    course2:"DS1",
-    course3:"DS1",
-    stat:"Active",
-    gender:"Male"
-}
+
 let courses=JSON.parse(window.localStorage.getItem("courses"));
 let std=[];
-std.push(student);
-window.localStorage.setItem("students", JSON.stringify(std));
-//window.localStorage.setItem('20210087', JSON.stringify(student2));
 let coursed;
 coursed+=`<option  hidden id="c1" >Choose your course</option>`;
 if(courses.length){
@@ -49,24 +34,24 @@ function searchbyid(){
         if(std[i].id==value){
             document.getElementById("fname").value=std[i].fname;
             document.getElementById("lname").value=std[i].lname;
-            document.getElementById("dob").value=std[i].DOB;
-            document.getElementById("course-1").value=std[i].course1;
-            document.getElementById("course-2").value=std[i].course2;
-            document.getElementById("c3").value=std[i].course3;
-            document.getElementById("c3").innerText=std[i].course3;
-            document.getElementById("dep").value=std[i].dep;
-            document.getElementById("dep").innerText=std[i].dep;
-            document.getElementById("un").value=std[i].uni;
+            document.getElementById("dob").value=std[i].Date;
+            document.getElementById("course-1").value=std[i].Course_1;
+            document.getElementById("course-2").value=std[i].course_2 ;
+            document.getElementById("c3").value=std[i].course_3;
+            document.getElementById("c3").innerText=std[i].course_3;
+            document.getElementById("dep").value=std[i].Dept;
+            document.getElementById("dep").innerText=std[i].Dept ;
+            document.getElementById("un").value=std[i].Uni;
             console.log(document.getElementById("un").value);
             document.getElementById("un").innerText=std[i].uni;
-            let gender=std[i].gender;
+            let gender=std[i].Gender ;
             if(gender=="Male"){
                 document.getElementById("male").checked=true;
             }
             else if(gender=="Female"){
                 document.getElementById("female").checked=true;
             }
-            let status=std[i].stat
+            let status=std[i].Active;
             if(status=="Active"){
                 document.getElementById("active").checked=true;
             }
@@ -94,22 +79,22 @@ function SetData() {
             if (students[i].id == value) {
                 students[i].fname = document.getElementById("fname").value;
                 students[i].lname = document.getElementById("lname").value;
-                students[i].DOB = document.getElementById("dob").value;
-                students[i].course1 = document.getElementById("course-1").value;
-                students[i].course2 = document.getElementById("course-2").value;
-                students[i].course3 = document.getElementById("course-3").value;
-                students[i].dep = document.getElementById("dp").value;
-                students[i].uni = document.getElementById("uni").value;
+                students[i].Date = document.getElementById("dob").value;
+                students[i].Course_1 = document.getElementById("course-1").value;
+                students[i].course_2  = document.getElementById("course-2").value;
+                students[i].course_3  = document.getElementById("course-3").value;
+                students[i].Dept = document.getElementById("dp").value;
+                students[i].Uni  = document.getElementById("uni").value;
                 
                 if (document.getElementById("male").checked == true) {
-                    students[i].gender = "Male";
+                    students[i].Gender  = "Male";
                 } else {
-                    students[i].gender = "Female";
+                    students[i].Gender  = "Female";
                 }
                 if (document.getElementById("active").checked == true) {
-                    students[i].stat = "Active";
+                    students[i].Active = "Active";
                 } else {
-                    students[i].stat = "InActive";
+                    students[i].Active = "InActive";
                 }
                 window.localStorage.setItem("students", JSON.stringify(students));
                 break;
