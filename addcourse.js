@@ -6,16 +6,7 @@ if(!localStorage.getItem('courses')){
 /* initialize local storage if not exist */
 
 
-
-/* Navbar section  */
-let menuBtn = document.getElementById('menu');
-let menu = document.getElementById('nav-list')
-menuBtn.addEventListener('click', ()=>{
-    menu.classList.toggle('show');
-})
-/* Navbar section  */
-
-/* Add New Course Page */
+/* Add New Course Section */
 const addBtn = document.getElementById('addCourse');
 
 function createErrorMsg(msg, wrapper){
@@ -93,5 +84,5 @@ addBtn.addEventListener('click', (e)=>{
 })
 
 
-/* Add New Course Page */
+/* Add New Course Section */
 
