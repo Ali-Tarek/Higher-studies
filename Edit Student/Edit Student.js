@@ -1,6 +1,7 @@
-
 let courses=JSON.parse(window.localStorage.getItem("courses"));
 let std=[];
+
+//window.localStorage.setItem('20210087', JSON.stringify(student2));
 let coursed;
 coursed+=`<option  hidden id="c1" >Choose your course</option>`;
 if(courses.length){
@@ -31,7 +32,7 @@ function searchbyid(){
     let value=document.getElementById("ID").value;
     let std=JSON.parse(localStorage.getItem("students"));
     for (let i = 0; i < std.length; i++){
-        if(std[i].id==value){
+        if(std[i].ID==value){
             document.getElementById("fname").value=std[i].fname;
             document.getElementById("lname").value=std[i].lname;
             document.getElementById("dob").value=std[i].Date;
@@ -76,7 +77,7 @@ function SetData() {
         let value = document.getElementById("ID").value;
         let students = JSON.parse(localStorage.getItem("students"));
         for (let i = 0; i < students.length; i++) {
-            if (students[i].id == value) {
+            if (students[i].ID == value) {
                 students[i].fname = document.getElementById("fname").value;
                 students[i].lname = document.getElementById("lname").value;
                 students[i].Date = document.getElementById("dob").value;
@@ -108,7 +109,7 @@ function DeleteItem(){
     if(flag){
         let value=document.getElementById("ID").value;
         let students=JSON.parse(window.localStorage.getItem("students"));
-        students=students.filter((student)=>student.id!=value);
+        students=students.filter((student)=>student.ID!=value);
         window.localStorage.setItem("students", JSON.stringify(students));
     }
 }
