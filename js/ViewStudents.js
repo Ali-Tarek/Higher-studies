@@ -43,7 +43,7 @@ function renderTableRows(students) {
         actionsCell.setAttribute('id', 'actions-column');
         actionsCell.innerHTML = `
         <td id="actions-column">
-        <a href="../Edit Student/Edit Student.html" class="edit-student"><i class="fa-solid fa-user-pen"
+        <a href="../pages/EditStudent.html" class="edit-student"><i class="fa-solid fa-user-pen"
                 style="color: #24527A;"></i></a>
         <a class="delete-student"><i class="fa-solid fa-trash" style="color: #dc3545;"></i></a>
         </td>
