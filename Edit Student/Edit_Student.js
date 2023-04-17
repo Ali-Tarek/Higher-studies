@@ -42,7 +42,7 @@ function searchbyid(){
             document.getElementById("c3").innerText=std[i].course_3;
             document.getElementById("dep").value=std[i].Dept;
             document.getElementById("dep").innerText=std[i].Dept ;
-            document.getElementById("un").value=std[i].Uni;
+            document.getElementById("uni").value=std[i].Uni;
             console.log(document.getElementById("un").value);
             document.getElementById("un").innerText=std[i].uni;
             let gender=std[i].Gender ;
@@ -157,7 +157,7 @@ ID.addEventListener("input" , ()=>{
 
 
 
-const Uni = document.getElementById("Uni");
+const Uni = document.getElementById("uni");
 const Uni_validity = document.getElementById("UniValid")
 Uni.addEventListener("input" , ()=>{
     if( containsNumbers(Uni.value) || Uni.value.length < 5)
