@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+
+   <link rel="shortcut icon" href="../Assets/Faculty of Computers and AI Logo.jpg" type="x-icon">
+   <link rel="stylesheet" href="style2.css"> 
+   <link rel="stylesheet" href="Edit Student.css"> 
+   <title>Student Edit Form</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="app.js"></script>
+   <script>
+   
+    function containsNumbers(str) {
+       return (!/^[A-Za-z]+$/.test(str));
+   }
+</script>
+
+
+</head>
+ 
+<body>
+    <header>
+
+        <img  id='logo' src="logo.png" alt="Logo">
+        <img  id='Minilogo' src="MiniLogo.png" alt="Logo">
+        <nav>
+            
+            
+            <div class="menu ">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <span>Cairo University</span>
+            <ul class="nav-links left">
+                <li>
+                    <a href = '#'>Add New Course </a>
+                </li>
+                <li>
+                    <a href = '#'>Edit Exisiting Student </a>
+                </li>
+                <li>
+                    <a href = '#'>View All Students</a>
+                </li>
+            </ul>
+    
+            <ul class="nav-links right">
+                <li>
+                    <a href = '#'>Home Page</a>
+                </li>
+                <li>
+                    <a href = '#'>Add Student</a>
+                </li>
+                <li>
+                    <a href = 'index2.html'>Course Registration</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
+
+<form class="Edit" method="post" id="form" >
+    <h2 style="text-align:center; ">Student Edit Form</h2>
+<div class="form center" >
+<!----- Search by ID ---------------------------------------------------------->
+<div class="item ID">
+   <label for="search" >Search by ID</label>
+   <input type="text" id="ID" name="search">
+   <button id ="search" type="button" onclick="searchbyid()">Search</button>
+   <i id="IDValid">❌</i>
+</div>
+ 
+<!----- First Name ---------------------------------------------------------->
+<div class="item fname">
+    <label for="fname">First Name</label>
+    <input type="text" id="fname" name="fname">
+    <i id="fnameValid">❌</i>
+</div>
+ 
+<!----- Last Name ---------------------------------------------------------->
+<div class="item lname">
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lname">
+    <i id="lnameValid">❌</i>
+</div>
+ 
+<!----- Date Of Birth -------------------------------------------------------->
+
+<div class="item Date">
+    <label for="start">Date Of Birth</label>
+      <input type="date" id="dob" name="trip-start"  max="2022-12-31">
+</div>
+ 
+<!----- Gender ----------------------------------------------------------->
+<div class="item gender">
+    <label for="Gender">Gender</label><br>
+    <div class="radio block">
+        <input id="male" class="toggle toggle-left" name="gender" value="Male" type="radio" checked>
+        <label for="male" class="btn">Male</label >
+        <input id="female" class="toggle toggle-right" name="gender" value="Female" type="radio">
+        <label for="female" class="btn">Female</label>
+    </div>
+</div>
+
+<!----- University ---------------------------------------------------------->
+<div class="item Uni">
+    <label for="uni">University</label>  
+       <select name="uni" id="uni" style="flex-grow:0.57">
+            <option  hidden id="un">Choose your University </option>
+            <option value="Cairo">Cairo</option>
+            <option value="Alex">Alex</option>
+            <option value="Helwan">Helwan</option>
+            <option value="Ain Shams">Ain Shams</option>
+       </select><br><br>
+       
+ </div>
+ 
+  
+ <!----- Department ---------------------------------------------------------->
+ <div class="item Dept">
+ 
+         <label for="department">Department</label>  
+         <select name="department" id="dp" style="flex-grow:0.57">
+            <option  hidden id="dep">Choose your department </option>
+            <option value="CS">CS</option>
+            <option value="IT">IT</option>
+            <option value="AI">AI</option>
+            <option value="IS">IS</option>
+            <option value="DS">DS</option>
+         </select><br><br>
+  </div>
+ 
+<!----- Courses ---------------------------------------------------------->
+<div class="item course-1">
+    <label  for="course-1" id='course'>Course-1</label>
+    <select name='course-1 '  name='course-1' id='course-1'style="flex-grow:0.57" >
+        
+        
+    </select>
+    <!-- <option value="Logic Design"> Logic Design </option>
+        <option value="Math1"> Math1 </option>
+        <option value="Math2"> Math2 </option>
+        <option value="CS"> CS </option>
+        <option value="Stat2"> Stat2 </option>
+        <option value="Artificial Intelligence"> Artificial Intelligence </option>
+        <option value="Data Structure"> Data Structure </option> -->
+
+      
+</div>
+
+<div class="item course-2">
+    <label id='course' for="course-2">Course-2</label>
+    <select name='course-2 ' id='course-2' style="flex-grow:0.57">
+
+    </select>
+</div>
+
+<div class="item course-3">
+    <label id='course' for="course-3">Course-3</label>
+    <select  name='course-3' id='course-3' style="flex-grow:0.57">
+
+    </select>
+</div>
+
+
+
+
+ 
+<!----- Status ---------------------------------------------------------->
+<div class="item status">   
+    <label for="Status" >Status </label><br>
+    <div class="radio block">
+        <input type="radio" id="active" name="Status" value="Active" checked >
+        <label for="active" class="btn">Active</label>
+        <input type="radio" id="inactive" name="Status" value="Inactive">
+        <label for="inactive"class="btn">Inactive</label><br>
+    </div>
+  
+</div>
+
+
+ 
+<!----- Submit and Reset ------------------------------------------------->
+
+
+</div>
+<div class="submit">
+    <input type="submit"  id="submit" onclick="SetData()">
+    <button id ="del" type="button" onclick="DeleteItem()">Delete</button>
+</div>
+<script>
+    function validateFrom(){
+        return 
+    }
+   
+    const sub = document.getElementsByClassName("Edit");
+    console.log(sub[0]);
+    sub[0].addEventListener("submit" , (e)=>{
+        e.preventDefault();
+        
+        if(document.getElementById("fnameValid").style.display == 'block')
+        {
+            alert("First Name is invalid ! Valid name must contains no symbols or digits");
+            return;
+        }
+        if(document.getElementById("lnameValid").style.display == 'block')
+        {
+            
+            alert("Last name is invalid ! Valid name must contains no symbols or digits");
+            return;
+        }
+        if(document.getElementById("IDValid").style.display == 'block')
+        {
+            alert("ID is Invalid ! Valid ID must starts with 20 and contains 8 digits");
+            return;
+        }
+
+
+    })
+    
+ </script>
+</form>
+<script src="Edit Student.js"></script>
+<footer>
+    <p>©2023 The University of Cairo</p>
+</footer>
+</body>
+</html>
