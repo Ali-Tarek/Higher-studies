@@ -5,18 +5,23 @@
 
 <head>
     <title>Add New Student</title>
-    <link rel="stylesheet" href="../Add Student Page/style.css">
+    <link rel="stylesheet" href="../css/AddNewStudent.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/Faculty of Computers and AI Logo.jpg" type="x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Add New Student - Higher Studies</title>
 
 </head>
 
 
 <body>
+
+
     <header>
 
-        <img id='logo' src="../Add Student Page/logo.png" alt="Logo">
-        <img id='Minilogo' src="../Add Student Page/MiniLogo.png" alt="Logo">
+        <img id='logo' src="../images/logo.png" alt="Logo">
+        <img id='Minilogo' src="../images/MiniLogo.png" alt="Logo">
         <nav>
 
 
@@ -28,25 +33,25 @@
             <span>Cairo University</span>
             <ul class="nav-links left">
                 <li>
-                    <a href='AddNewCourse.html'>Add New Course </a>
+                    <a href='../pages/AddNewCourse.html'>Add New Course </a>
                 </li>
                 <li>
-                    <a href='#'>Edit Exisiting Student </a>
+                    <a href='../pages/EditStudent.html'>Edit Student </a>
                 </li>
                 <li>
-                    <a href='#'>View All Students</a>
+                    <a href='../pages/ViewStudent.html'>View Students</a>
                 </li>
             </ul>
 
             <ul class="nav-links right">
                 <li>
-                    <a href='#'>Home Page</a>
+                    <a href='../pages/CoursesTable.html'>Course Table</a>
                 </li>
                 <li>
-                    <a href='#'>Add Student</a>
+                    <a href='../pages/AddNewStudent.html'>Add Student</a>
                 </li>
                 <li>
-                    <a href='CourseRegistrationPage.html'>Course Registration</a>
+                    <a href='../pages/CourseRegistration.html'>Course Registration</a>
                 </li>
             </ul>
         </nav>
@@ -54,13 +59,15 @@
 
     <br><br>
     <br><br>
+
+
     <main>
         <div class="col-1 page">
             <h1>Welcome to FCAI Registration Page</h1>
             <h2>
                 To Add a new student Kindly fill this form
             </h2>
-            <img src="../Add Student Page/Cairo_University_Crest.png" alt="Cairo-university Logo">
+            <img src="../images/Cairo_University_Crest.png" alt="Cairo-university Logo">
         </div>
         <form class="SignUp">
             <h2>
@@ -99,7 +106,6 @@
                         <option value="Alexandria"> Alexandria </option>
                         <option value="Tanta"> Tanta </option>
                         <option value="Mansoura"> Mansoura </option>
-                        <option value="" hidden> Any Any Any Any Any </option>
                     </select><br>
                 </div>
 
@@ -140,14 +146,6 @@
                     <label for="course-1" id='course'>Course-1</label>
                     <select name='course-1 ' name='course-1' id='course-1'>
                         <option value="" hidden>Choose Course</option>
-                        <option value="logic"> Logic Design </option>
-                        <option value="M1"> Math1 </option>
-                        <option value="M2"> Math2 </option>
-                        <option value="CS"> CS </option>
-                        <option value="ST2"> Stat2 </option>
-                        <option value="AI"> Artificial Intelligence </option>
-                        <option value="DS"> Data Structure </option>
-
                     </select>
                 </div>
 
@@ -155,14 +153,6 @@
                     <label id='course' for="course-2">Course-2</label>
                     <select name='course-2 ' id='course-2'>
                         <option value="" hidden>Choose Course</option>
-                        <option value="logic"> Logic Design </option>
-                        <option value="M1"> Math1 </option>
-                        <option value="M2"> Math2 </option>
-                        <option value="CS"> CS </option>
-                        <option value="ST2"> Stat2 </option>
-                        <option value="AI"> Artificial Intelligence </option>
-                        <option value="DS"> Data Structure </option>
-
                     </select>
                 </div>
 
@@ -170,13 +160,6 @@
                     <label id='course' for="course-3">Course-3</label>
                     <select name='course-3' id='course-3'>
                         <option value="" hidden>Choose Course</option>
-                        <option value="logic"> Logic Design </option>
-                        <option value="M1"> Math1 </option>
-                        <option value="M2"> Math2 </option>
-                        <option value="CS"> CS </option>
-                        <option value="ST2"> Stat2 </option>
-                        <option value="AI"> Artificial Intelligence </option>
-                        <option value="DS"> Data Structure </option>
                     </select>
                 </div>
 
@@ -187,11 +170,12 @@
         </form>
 
     </main>
+    <br><br>
 
     <footer>
         <p>©2023 The University of Cairo</p>
     </footer>
-    <script src="../Add Student Page/script.js"></script>
+    <script src="../js/AddNewStudent.js"></script>
     <script>
 
     </script>

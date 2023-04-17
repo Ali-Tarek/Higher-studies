@@ -4,11 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    height: 100%;
+}
 
 nav {
     display: flex;
     position: fixed;
-    background-color: #24527A;
+    background-color: #24527a;
     justify-content: flex-end;
     align-items: center;
     min-height: 7vh;
@@ -78,6 +81,100 @@ nav span {
     display: none;
 }
 
+main {
+    position: relative;
+    top: 7vh;
+    height: 93vh;
+}
+
+.img-container {
+    /* The image used */
+    display: grid;
+    place-items: center;
+    background-image: url("../images/Cairo-University.png");
+
+    /* Full height */
+    height: 100%;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.img-container h1 {
+    color: white;
+    position: relative;
+}
+
+.Info {
+    display: flex;
+    justify-content: space-evenly;
+    position: absolute;
+    align-items: center;
+    height: 320px;
+    width: 100%;
+    top: 96vh;
+    background-color: rgb(255, 255, 255);
+}
+
+.Info div {
+    display: flex;
+    width: 200px;
+    height: 230px;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.Info img {
+    width: 100px;
+    height: 100px;
+}
+
+.all-students h2 {
+    color: rgb(0, 0, 0);
+}
+
+footer {
+    position: relative;
+    padding: 10px;
+    top: 59vh;
+    background-color: #24527a;
+}
+
+footer p {
+    max-width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
+
+#Stat {
+    position: absolute;
+    top: 0;
+    color: #24527a;
+    font-size: 30px;
+    font-style: oblique;
+
+}
+
+.toggle .line1 {
+    opacity: 0;
+}
+
+
+.toggle .line2 {
+    transform: rotate(45deg) translate(5px, 5px);
+    transition: all 0.3s ease-in;
+}
+
+
+.toggle .line3 {
+    transform: rotate(-45deg);
+    transition: all 0.3s ease-in;
+
+}
+
 @media only screen and (max-width:1050px) {
 
     .nav-links a {
@@ -99,7 +196,7 @@ nav span {
         left: 0px;
         height: 93vh;
         top: 7vh;
-        background-color: #24527A;
+        background-color: #24527a;
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -113,7 +210,7 @@ nav span {
         right: 0px;
         height: 93vh;
         top: 7vh;
-        background-color: #24527A;
+        background-color: #24527a;
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -147,19 +244,28 @@ nav span {
         margin-right: 50px;
         z-index: 100;
     }
-}
-
-footer {
-    position: sticky;
-    bottom: 0px;
-    width: 100%;
-    background-color: #24527A;
-    padding: 6px;
 
 
 }
 
-footer P {
-    color: white;
-    text-align: center;
+@media only screen and (max-width:650px) {
+    body {
+        box-sizing: border-box;
+    }
+
+    .Info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 190px;
+    }
+
+    #Stat {
+        position: relative;
+    }
+
+    footer {
+        margin-top: 400px;
+
+    }
 }

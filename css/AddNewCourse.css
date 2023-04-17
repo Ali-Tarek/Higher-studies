@@ -1,21 +1,21 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif
 }
 
-body{
+body {
     width: 100%;
 }
 
-:root{
+:root {
     --primary-color: #24527A;
     --secondary-color: #E0EBEB;
 }
 
 /* Start add Course Form */
-.container{
+.container {
     width: 500px;
     margin: auto;
     margin-top: 25px;
@@ -24,28 +24,33 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
     margin-bottom: 15px;
 }
-.container h1{
+
+.container h1 {
     font-weight: 600;
     color: #0C0909;
     text-align: center;
     margin-bottom: 12px;
 }
-.form-control{
+
+.form-control {
     width: 100%;
     display: flex;
     padding: 1rem;
     align-items: center;
 }
 
-.form-control label{
+.form-control label {
     display: block;
     width: 40%;
     font-weight: 500;
 }
-.form-control .wrapper{
+
+.form-control .wrapper {
     width: 60%;
 }
-.form-control .wrapper input, .form-control .wrapper select{
+
+.form-control .wrapper input,
+.form-control .wrapper select {
     appearance: none;
     display: block;
     width: 100%;
@@ -55,18 +60,21 @@ body{
     border: 2px solid #eee;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
 }
-.form-control .wrapper input:focus, .form-control .wrapper select:focus{
+
+.form-control .wrapper input:focus,
+.form-control .wrapper select:focus {
     outline: none;
     border: 2px solid var(--primary-color);
 }
-.form-control .wrapper .error{
+
+.form-control .wrapper .error {
     color: #ff4444;
     font-size: 13px;
     font-weight: 600;
 }
 
 
-.form-control input[type="submit"]{
+.form-control input[type="submit"] {
     width: 100%;
     background-color: var(--primary-color);
     padding: 10px;
@@ -78,23 +86,26 @@ body{
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
     cursor: pointer;
 }
-.form-control input[type="submit"]:hover{
+
+.form-control input[type="submit"]:hover {
     background-color: #1d4364;
     box-shadow: none;
 }
 
 @media screen and (max-width: 574px) {
-    .container{
+    .container {
         width: 400px;
     }
-    .form-control{
+
+    .form-control {
         flex-direction: column;
         gap: 12px;
     }
 
-    .form-control label, 
-    .form-control .wrapper{
+    .form-control label,
+    .form-control .wrapper {
         width: 100%;
     }
 }
+
 /* End add Course Form */

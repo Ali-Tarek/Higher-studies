@@ -4,8 +4,9 @@
 <head>
 
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CourseRegistrationPage.css">
-    <link rel="shortcut icon" href="../Assets/Faculty of Computers and AI Logo.jpg" type="x-icon">
+    <Link rel="stylesheet" href="../Nav-Footer/navbar.css">
+    <link rel="stylesheet" href="../css/CourseRegistration.css">
+    <link rel="shortcut icon" href="../images/Faculty of Computers and AI Logo.jpg" type="x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
@@ -14,6 +15,51 @@
 </head>
 
 <body>
+
+
+    <header>
+
+        <img id='logo' src="../images/logo.png" alt="Logo">
+        <img id='Minilogo' src="../images/MiniLogo.png" alt="Logo">
+        <nav>
+
+
+            <div class="menu ">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <span>Cairo University</span>
+            <ul class="nav-links left">
+                <li>
+                    <a href='../pages/AddNewCourse.html'>Add New Course </a>
+                </li>
+                <li>
+                    <a href='../pages/EditStudent.html'>Edit Student </a>
+                </li>
+                <li>
+                    <a href='../pages/ViewStudent.html'>View Students</a>
+                </li>
+            </ul>
+
+            <ul class="nav-links right">
+                <li>
+                    <a href='../pages/CoursesTable.html'>Course Table</a>
+                </li>
+                <li>
+                    <a href='../pages/AddNewStudent.html'>Add Student</a>
+                </li>
+                <li>
+                    <a href='../pages/CourseRegistration.html'>Course Registration</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <br><br>
+    <br><br>
+
 
     <div class="container">
 
@@ -48,13 +94,6 @@
                     <div class="wrapper">
 
                         <select id="course1" name="course1">
-                            <!-- <option value="logic"> Logic Design </option>
-                            <option value="M1"> Math1 </option>
-                            <option value="M2"> Math2 </option>
-                            <option value="CS"> CS </option>
-                            <option value="ST2"> Stat2 </option>
-                            <option value="AI"> Artificial Intelligence </option>
-                            <option value="DS"> Data Structure </option> -->
                         </select>
                         <span class="error"></span>
 
@@ -68,13 +107,6 @@
                     <div class="wrapper">
 
                         <select id="course2" name="course2">
-                            <!-- <option value="logic"> Logic Design </option>
-                            <option value="M1"> Math1 </option>
-                            <option value="M2"> Math2 </option>
-                            <option value="CS"> CS </option>
-                            <option value="ST2"> Stat2 </option>
-                            <option value="AI"> Artificial Intelligence </option>
-                            <option value="DS"> Data Structure </option> -->
                         </select>
                         <span class="error"></span>
 
@@ -90,13 +122,6 @@
                     <div class="wrapper">
 
                         <select id="course3" name="course3">
-                            <!-- <option value="logic"> Logic Design </option>
-                            <option value="M1"> Math1 </option>
-                            <option value="M2"> Math2 </option>
-                            <option value="CS"> CS </option>
-                            <option value="ST2"> Stat2 </option>
-                            <option value="AI"> Artificial Intelligence </option>
-                            <option value="DS"> Data Structure </option> -->
                         </select>
                         <span class="error"></span>
 
@@ -111,8 +136,16 @@
         </form>
     </div>
 
+    <br>
+    <br>
+    <br>
 
-    <script src="../CourseRegistrationPage.js"></script>
+    <footer>
+        <p>©2023 The University of Cairo</p>
+    </footer>
+
+    <script src="../Nav-Footer/navbar.js"></script>
+    <script src="../js/CourseRegistration.js"></script>
 
 
 
