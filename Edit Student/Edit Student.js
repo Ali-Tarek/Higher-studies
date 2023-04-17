@@ -1,20 +1,6 @@
-var student={
-    id:"20210315",
-    fname:"Mazen",
-    lname:"Khaled",
-    DOB:"2018-07-22",
-    uni:"Cairo",
-    dep:"IT",
-    course1:"DS1",
-    course2:"DS1",
-    course3:"DS1",
-    stat:"Active",
-    gender:"Male"
-}
 let courses=JSON.parse(window.localStorage.getItem("courses"));
 let std=[];
-std.push(student);
-window.localStorage.setItem("students", JSON.stringify(std));
+
 //window.localStorage.setItem('20210087', JSON.stringify(student2));
 let coursed;
 coursed+=`<option  hidden id="c1" >Choose your course</option>`;
@@ -46,7 +32,7 @@ function searchbyid(){
     let value=document.getElementById("ID").value;
     let std=JSON.parse(localStorage.getItem("students"));
     for (let i = 0; i < std.length; i++){
-        if(std[i].id==value){
+        if(std[i].ID==value){
             document.getElementById("fname").value=std[i].fname;
             document.getElementById("lname").value=std[i].lname;
             document.getElementById("dob").value=std[i].DOB;
@@ -91,7 +77,7 @@ function SetData() {
         let value = document.getElementById("ID").value;
         let students = JSON.parse(localStorage.getItem("students"));
         for (let i = 0; i < students.length; i++) {
-            if (students[i].id == value) {
+            if (students[i].ID == value) {
                 students[i].fname = document.getElementById("fname").value;
                 students[i].lname = document.getElementById("lname").value;
                 students[i].DOB = document.getElementById("dob").value;
@@ -123,7 +109,7 @@ function DeleteItem(){
     if(flag){
         let value=document.getElementById("ID").value;
         let students=JSON.parse(window.localStorage.getItem("students"));
-        students=students.filter((student)=>student.id!=value);
+        students=students.filter((student)=>student.ID!=value);
         window.localStorage.setItem("students", JSON.stringify(students));
     }
 }
