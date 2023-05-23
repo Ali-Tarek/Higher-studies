@@ -77,7 +77,7 @@ function validateForm(e) {
     student.Date = e.currentTarget.Date_Birth.value
     student.Uni = e.currentTarget.Uni.value
     student.Gender = gender.value;
-    student.Active = (status.value === 'Active');
+    student.Active = status.value;
     student.Dept = document.getElementById('Dept').value;
     student.course_1 = course_1;
     student.course_2 = course_2;

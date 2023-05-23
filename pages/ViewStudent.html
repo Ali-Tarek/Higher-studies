@@ -2,20 +2,17 @@
 <html>
 
 <head>
-    <link rel="shortcut icon" href="../images/Faculty of Computers and AI Logo.jpg" type="x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    <link rel="shortcut icon" href="../images/Faculty of Computers and AI Logo.jpg" type="x-icon">
     <link rel="stylesheet" href="../css/ViewStudent.css">
-    <Link rel="stylesheet" href="../Nav-Footer/navbar.css">
-
-    <script src="https://kit.fontawesome.com/9f31003b6f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../Nav-Footer/navbar.css">
     <title>View Students - Higher Studies</title>
 </head>
 
 <body>
     <!-- [BEGIN] Navigation bar -->
     <header>
-
         <a href="Home.html">
             <img id='logo' src="../images/logo.png" alt="Logo">
         </a>
@@ -23,8 +20,6 @@
             <img id='Minilogo' src="../images/MiniLogo.png" alt="Logo">
         </a>
         <nav>
-
-
             <div class="menu ">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -42,7 +37,6 @@
                     <a href='../pages/ViewStudent.html'>View Students</a>
                 </li>
             </ul>
-
             <ul class="nav-links right">
                 <li>
                     <a href='../pages/CoursesTable.html'>Course Table</a>
@@ -56,10 +50,8 @@
             </ul>
         </nav>
     </header>
-
-
     <!-- [END] Navigation bar -->
-    <!-- [BEGIN] Student table -->
+    <!-- [BEGIN] Table -->
     <div class="students-table">
         <div class="table-tools">
             <span>Students Details</span>
@@ -78,19 +70,19 @@
                     <th>ID</th>
                     <th>Department
                         <select id="filter-department" onchange="filterByDepartment();">
-                            <option value=" ">All</option>
-                            <option value="AI">Artifical Intelligence</option>
-                            <option value="CS">Computer Science</option>
-                            <option value="DS">Decision Support</option>
-                            <option value="IS">Information Systems</option>
-                            <option value="IT">Information Technology</option>
+                            <option value=' '>All</option>
+                            <option value='AI'>Artifical Intelligence</option>
+                            <option value='CS'>Computer Science</option>
+                            <option value='DS'>Decision Support</option>
+                            <option value='IS'>Information Systems</option>
+                            <option value='IT'>Information Technology</option>
                         </select>
                     </th>
                     <th id="status-column">Status
                         <select id="filter-status" onchange="filterByStatus();">
-                            <option value=" ">All</option>
-                            <option value=1>Active</option>
-                            <option value=0>Inactive</option>
+                            <option value=' '>All</option>
+                            <option value='A'>Active</option>
+                            <option value='I'>Inactive</option>
                         </select>
                     </th>
                     <th id="actions-column">Actions</th>
@@ -100,7 +92,7 @@
             </tbody>
         </table>
     </div>
-    <!-- [END] Student table -->
+    <!-- [END] Table -->
     <!-- [BEGIN] Deletion confirm modal -->
     <div id="delete-modal" class="hide">
         <div class="modal-content">
@@ -127,17 +119,17 @@
             </div>
         </div>
     </div>
-    
     <!-- [END] Deletion success modal -->
+    <!-- [BEGIN] Footer -->
     <footer>
         <p>©2023 The University of Cairo</p>
     </footer>
+    <!-- [END] Footer -->
 
-    <script src="../Nav-Footer/navbar.js"></script>
-
+    <script src="https://kit.fontawesome.com/9f31003b6f.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="../js/ViewStudents.js"></script>
-
+    <script src="../Nav-Footer/navbar.js"></script>
 </body>
-
 
 </html>

@@ -35,7 +35,7 @@ tr:nth-child(even) {
     background-color: #24527A;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     display: flex;
-    margin: 0px 25px 0px 25px;
+    margin: -65px 25px 0px 25px;
 }
 
 .table-tools span {
@@ -111,6 +111,7 @@ tr:nth-child(even) {
     cursor: pointer;
     margin-right: 10px;
 }
+
 /* [END] Students table */
 
 /* [START] Modals */
@@ -146,6 +147,7 @@ tr:nth-child(even) {
 .modal-text p {
     font-size: 20px;
     font-weight: 500;
+    padding-bottom: 25px;
 }
 
 .modal-actions {
@@ -177,7 +179,7 @@ tr:nth-child(even) {
 
 .okay {
     background-color: #198754;
-    margin-left: 110px;
+    margin-left: 120px;
 }
 
 .cancel:hover,
@@ -185,13 +187,17 @@ tr:nth-child(even) {
 .okay:hover {
     opacity: 0.75;
 }
+
 /* [END] Modals */
-header{
-    height:5vh;
+header {
+    height: 5vh;
 }
-footer{
-    margin-top: 50px;
+
+footer {
+    margin-top: 71px;
 }
-.students-table{
-    min-height: 75vh;;
+
+.students-table {
+    min-height: 75vh;
+    ;
 }

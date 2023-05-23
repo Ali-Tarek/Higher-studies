@@ -1,41 +1,64 @@
-var students = JSON.parse(localStorage.getItem("students"));
-var displayedStudents = [...students];
+const xhr = new XMLHttpRequest();
+const studentsData = [];
+var tableBody = document.getElementsByTagName('tbody')[0];
 
-function renderTableRows(students) {
-    students.forEach(function (student, index) {
-        var table = document.getElementsByTagName('tbody')[0];
-        var row = table.insertRow();
+xhr.open('GET', 'http://127.0.0.1:8000/students/');
+xhr.responseType = 'json';
 
+xhr.onload = function () {
+    if (xhr.status === 200) {
+        const students = xhr.response;
+
+        for (let i = 0; i < students.length; i++) {
+            const student = students[i];
+            const studentData = [student.firstName, student.lastName, student.id, student.department, student.status];
+
+            studentsData.push(studentData);
+        }
+
+        renderTableRows(studentsData);
+
+    } else {
+        console.error('Error retrieving student data');
+    }
+};
+
+xhr.send();
+
+function renderTableRows(studentsData) {
+    for (let i = 0; i < studentsData.length; i++) {
+        const studentData = studentsData[i];
+        var row = tableBody.insertRow();
         var nameCell = row.insertCell(0);
         var idCell = row.insertCell(1);
         var departmentCell = row.insertCell(2);
         var statusCell = row.insertCell(3);
         var actionsCell = row.insertCell(4);
 
-        nameCell.innerHTML = `${student.fname} ${student.lname}`;
-        idCell.innerHTML = student.ID;
+        nameCell.innerHTML = `${studentData[0]} ${studentData[1]}`;
+        idCell.innerHTML = studentData[2];
 
-        if (student.Dept === 'AI') {
+        if (studentData[3] === 'AI') {
             departmentCell.innerHTML = 'Artificial Intelligence';
 
-        } else if (student.Dept === 'CS') {
+        } else if (studentData[3] === 'CS') {
             departmentCell.innerHTML = 'Computer Science';
 
-        } else if (student.Dept === 'DS') {
+        } else if (studentData[3] === 'DS') {
             departmentCell.innerHTML = 'Decision Support';
 
-        } else if (student.Dept === 'IS') {
+        } else if (studentData[3] === 'IS') {
             departmentCell.innerHTML = 'Information Systems';
 
-        } else if (student.Dept === 'IT') {
+        } else if (studentData[3] === 'IT') {
             departmentCell.innerHTML = 'Information Technology';
         }
 
-        if (student.Active === true) {
+        if (studentData[4] === 'A') {
             statusCell.setAttribute('id', 'status-column');
             statusCell.innerHTML = '<i class="fa-solid fa-circle fa-2xs" style="color: #198754;"></i>Active';
 
-        } else if (student.Active === false) {
+        } else if (studentData[4] === 'I') {
             statusCell.setAttribute('id', 'status-column');
             statusCell.innerHTML = '<i class="fa-solid fa-circle fa-2xs" style="color: #dc3545;"></i>Inactive';
         }
@@ -48,43 +71,51 @@ function renderTableRows(students) {
         <a class="delete-student"><i class="fa-solid fa-trash" style="color: #dc3545;"></i></a>
         </td>
         `;
-        var deleteButton = document.getElementsByClassName('delete-student')[index];
+        var deleteButton = document.getElementsByClassName('delete-student')[i];
         deleteButton.addEventListener('click', function () {
-            showDeleteModal(student);
+            showDeleteModal(studentsData[i]);
         })
-    })
+    }
 }
 
 function resetTableRows() {
-    var table = document.getElementsByTagName('tbody')[0];
-    table.innerHTML = '';
+    tableBody.innerHTML = '';
 }
 
 var searchInput = document.getElementById('search-field');
 searchInput.addEventListener('input', function (event) {
-    var filteredStudents = students.filter(function (student) {
-        return JSON.stringify(student).toLowerCase().includes(event.target.value.toLowerCase());
-    });
+    var searchedData = [];
 
-    displayedStudents = filteredStudents;
+    for (let i = 0; i < studentsData.length; i++) {
+        const student = studentsData[i];
+
+        if (student.join(',').toLowerCase().includes(event.target.value.toLowerCase())) {
+            searchedData.push(student);
+        }
+    }
+
     resetTableRows();
-    renderTableRows(filteredStudents);
+    renderTableRows(searchedData);
 });
 
 function filterByDepartment() {
     var selectedValue = document.getElementById("filter-department").value;
 
     if (selectedValue === ' ') {
-        displayedStudents = students;
         resetTableRows();
-        renderTableRows(students);
+        renderTableRows(studentsData);
 
     } else {
-        var filteredStudents = students.filter(function (student) {
-            return student.Dept === selectedValue;
-        });
+        var filteredStudents = [];
 
-        displayedStudents = filteredStudents;
+        for (let i = 0; i < studentsData.length; i++) {
+            const student = studentsData[i];
+
+            if (student[3] === selectedValue) {
+                filteredStudents.push(student);
+            }
+        }
+
         resetTableRows();
         renderTableRows(filteredStudents);
     }
@@ -94,16 +125,20 @@ function filterByStatus() {
     var selectedValue = document.getElementById("filter-status").value;
 
     if (selectedValue === ' ') {
-        displayedStudents = students;
         resetTableRows();
-        renderTableRows(students);
+        renderTableRows(studentsData);
 
     } else {
-        var filteredStudents = students.filter(function (student) {
-            return student.Active == selectedValue;
-        });
+        var filteredStudents = [];
 
-        displayedStudents = filteredStudents;
+        for (let i = 0; i < studentsData.length; i++) {
+            const student = studentsData[i];
+
+            if (student[4] === selectedValue) {
+                filteredStudents.push(student);
+            }
+        }
+
         resetTableRows();
         renderTableRows(filteredStudents);
     }
@@ -113,7 +148,7 @@ function showDeleteModal(student) {
     var modal = document.getElementById('delete-modal');
     modal.classList.add('show');
     modal.classList.remove('hide');
-    modal.setAttribute('student-id', student.ID);
+    modal.setAttribute('student-id', student[2]);
 }
 
 function closeDeleteModal() {
@@ -123,7 +158,7 @@ function closeDeleteModal() {
     modal.removeAttribute('student-id');
 }
 
-function showSuccessModal(student) {
+function showSuccessModal() {
     var modal = document.getElementById('success-modal');
     modal.classList.add('show');
     modal.classList.remove('hide');
@@ -136,21 +171,33 @@ function closeSuccessModal() {
 }
 
 function deleteStudent() {
-    var modal = document.getElementById('delete-modal');
-    var id = modal.getAttribute('student-id');
+    const modal = document.getElementById('delete-modal');
+    const id = modal.getAttribute('student-id');
 
-    students = students.filter(function (student) {
-        return student.ID !== id;
-    });
+    axios.delete('http://127.0.0.1:8000/delete-with-pk/' + id + '/')
+        .then(response => {
+            closeDeleteModal();
+            showSuccessModal();
 
-    displayedStudents = displayedStudents.filter(function (student) {
-        return student.ID !== id;
-    });
+            axios.get('http://127.0.0.1:8000/students/')
+                .then(response => {
+                    const updatedStudentsData = [];
 
-    localStorage.setItem("students", JSON.stringify(students));
-    resetTableRows();
-    renderTableRows(displayedStudents);
-    closeDeleteModal();
+                    for (let i = 0; i < response.data.length; i++) {
+                        const updatedStudent = response.data[i];
+                        const updatedStudentData = [updatedStudent.firstName, updatedStudent.lastName, updatedStudent.id, updatedStudent.department, updatedStudent.status];
+
+                        updatedStudentsData.push(updatedStudentData);
+                    }
+
+                    resetTableRows();
+                    renderTableRows(updatedStudentsData);
+                })
+                .catch(error => {
+                    console.error('Error fetching the updated list of students.');
+                });
+        })
+        .catch(error => {
+            console.error('Error deleting the student.');
+        });
 }
-
-renderTableRows(displayedStudents);
