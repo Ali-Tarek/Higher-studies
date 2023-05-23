@@ -44,7 +44,7 @@ sub[0].addEventListener("submit", (e) => { validateForm(e) })
 
 function validateForm(e) {
     e.preventDefault();
-
+    
     if (document.getElementById("fnameValid").style.display == 'block') {
         alert("First Name is invalid ! Valid name must contains no symbols or digits");
         return;
@@ -79,28 +79,37 @@ function validateForm(e) {
     student.Gender = gender.value;
     student.Active = (status.value === 'Active');
     student.Dept = document.getElementById('Dept').value;
-    student.Course_1 = course_1;
+    student.course_1 = course_1;
     student.course_2 = course_2;
     student.course_3 = course_3;
 
 
-    var students = JSON.parse(localStorage.getItem("students")) || [];
-    for (const stu of students) {
-        if (stu.ID == e.currentTarget.ID.value) {
-            alert("The provided ID aleady Existed!");
-            return;
-        }
-    }
 
 
 
-    students.push(student);
-    localStorage.setItem("students", JSON.stringify(students));
-    console.log(JSON.parse(localStorage.getItem("student")));
 
-    alert("New Student Added ");
-    const sub = document.getElementsByClassName("SignUp");
-    sub[0].reset();
+
+    $.ajax({
+        url: 'http://127.0.0.1:8000/Students/addNewStudent/',
+        type: 'POST',
+        data: JSON.stringify(student),
+        contentType: 'application/json',
+        success: function(response) {
+          // Handle the successful response from the backend
+          console.log(response);
+          alert('New Student Added');
+          const sub = document.getElementsByClassName('SignUp');
+          sub[0].reset();
+        },
+        error: function(error) {
+          // Handle any errors
+          console.error(error.responseJSON); // or error.responseText
+          alert('Error: ' + error.responseJSON.error);
+        },
+      });
+
+
+    
 }
 
 
@@ -108,7 +117,6 @@ function validateForm(e) {
 function containsNumbers(str) {
     return (!/^[A-Za-z]+$/.test(str));
 }
-
 
 
 
@@ -127,19 +135,32 @@ const navslide = () => {
 navslide();
 
 
-// Courses Rendering
 
+ // ajax function to render the courses
+ $.ajax({
+    url:"http://127.0.0.1:8000/courses/",
+    type:"GET",
+    success: function(response) {
+        const course_1 = document.getElementById("course-1")
+        const course_2 = document.getElementById("course-2")
+        const course_3 = document.getElementById("course-3")
+        response.forEach(course => {
+        const option = document.createElement("option")
+        option.text = course.id;
+        option.value = course.id;
+        course_1.appendChild(option.cloneNode(true));
+        course_2.appendChild(option.cloneNode(true));
+        course_3.appendChild(option.cloneNode(true));
+    });
 
-
-const courses = JSON.parse(localStorage.getItem('courses'));
-const course_1 = document.getElementById("course-1")
-const course_2 = document.getElementById("course-2")
-const course_3 = document.getElementById("course-3")
-courses.forEach(course => {
-    const option = document.createElement("option")
-    option.text = course.name;
-    option.value = course.name;
-    course_1.appendChild(option.cloneNode(true));
-    course_2.appendChild(option.cloneNode(true));
-    course_3.appendChild(option.cloneNode(true));
+    console.log(response);
+    const sub = document.getElementsByClassName('SignUp');
+    sub[0].reset();
+    },
+    error: function(error) {
+    // Handle any errors
+    console.error(error);
+    alert('Error: Failed to add student');
+    },
 });
+
