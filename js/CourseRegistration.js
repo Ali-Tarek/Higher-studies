@@ -6,37 +6,74 @@ const course1 = document.getElementById("course1");
 const course2 = document.getElementById("course2");
 const course3 = document.getElementById("course3");
 
-const students = JSON.parse(localStorage.getItem("students"));
+let students = [];
+let courses = [];
 
-let courses = JSON.parse(window.localStorage.getItem("courses"));
-let coursed;
-if (courses.length) {
-    for (let course of courses) {
-        coursed += `<option value="${course.name}">${course.name}</option>`;
-    }
-    course1.innerHTML = coursed;
-    course2.innerHTML = coursed;
-    course3.innerHTML = coursed;
+function retrieveCourses() {
+    fetch("http://127.0.0.1:8000/courses/")
+        .then(response => response.json())
+        .then(data => {
+            courses = data;
+            populateCourseOptions();
+        })
+        .catch(error => {
+            console.log("Error retrieving courses:", error);
+        });
 }
 
+function retrieveStudents() {
+    fetch("http://127.0.0.1:8000/students/")
+        .then(response => response.json())
+        .then(data => {
+            students = data;
+        })
+        .catch(error => {
+            console.log("Error retrieving students:", error);
+        });
+}
 
+function populateCourseOptions() {
+    let coursed = "";
+    coursed+='<option  hidden id="c1" >Choose your course</option>';
+    if (courses.length) {
+        for (let course of courses) {
+            coursed += `<option value="${course.name}">${course.name}</option>`;
+        }
+        course1.innerHTML = coursed;
+        course2.innerHTML = coursed;
+        course3.innerHTML = coursed;
+    }
+}
 
 if (searchBtn) {
     searchBtn.addEventListener("click", function (e) {
         e.preventDefault();
-
         var id = searchInput.value;
-
         for (var i = 0; i < students.length; i++) {
 
+            if (students[i].id == id) {
+                studentName.innerHTML = students[i].firstName + " " + students[i].lastName;
 
-            if (students[i].ID === id) {
+                for (var j = 0; j < courses.length; j++) {
+                    if (students[i].course1 == courses[j].id) {
+                        course1.value = courses[j].name;
+                        break;
+                    }
+                }
 
-                studentName.innerHTML = students[i].fname + ' ' + students[i].lname;
+                for (var j = 0; j < courses.length; j++) {
+                    if (students[i].course2 == courses[j].id) {
+                        course2.value = courses[j].name;
+                        break;
+                    }
+                }
 
-                course1.querySelector(`option[value="${students[i].Course_1}"]`).selected = true;
-                course2.querySelector(`option[value="${students[i].course_2}"]`).selected = true;
-                course3.querySelector(`option[value="${students[i].course_3}"]`).selected = true;
+                for (var j = 0; j < courses.length; j++) {
+                    if (students[i].course3 == courses[j].id) {
+                        course3.value = courses[j].name;
+                        break;
+                    }
+                }
 
                 break;
             }
@@ -45,39 +82,89 @@ if (searchBtn) {
 }
 
 
+
+
 registerBtn.addEventListener("click", (e) => {
+
+    var student;
     e.preventDefault();
     let spanError = document.getElementsByClassName("error");
-    if (course1.value === course2.value || course2.value === course3.value || course1.value === course3.value) {
-
-
+    if (
+        course1.value === course2.value ||
+        course2.value === course3.value ||
+        course1.value === course3.value
+    ) {
         for (var i = 0; i < spanError.length; i++) {
             spanError[i].textContent = "Duplicate Course";
         }
-
-    }
-    else {
-
+    } else {
         var id = searchInput.value;
         for (var i = 0; i < spanError.length; i++) {
             spanError[i].textContent = "";
         }
 
+
         for (var i = 0; i < students.length; i++) {
-            if (students[i].ID === id) {
-                students[i].Course_1 = course1.value;
-                students[i].course_2 = course2.value;
-                students[i].course_3 = course3.value;
+
+            if (students[i].id == id) {
+
+                console.log(course1.value);
+                console.log(course2.value);
+                console.log(course3.value);
+
+                students[i].course1 = course1.value;
+                students[i].course2 = course2.value;
+                students[i].course3 = course3.value;
+
+                for (var j = 0; j < courses.length; j++) {
+
+                    if (students[i].course1 == courses[j].name) {
+                        students[i].course1 = courses[j].id;
+                    }
+                    if (students[i].course2 == courses[j].name) {
+                        students[i].course2 = courses[j].id;
+                    }
+                    if (students[i].course3 == courses[j].name) {
+                        students[i].course3 = courses[j].id;
+                    }
+                }
+
+                student = students[i];
+
                 break;
             }
+
+
         }
 
-        localStorage.setItem("students", JSON.stringify(students));
 
-        alert("Updated");
     }
+
+    console.log(student)
+    // Set the URL of the Django REST Framework endpoint, including the primary key
+    var url = "http://127.0.0.1:8000/api/update-student/" + student.id + "/";
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(student),
+    })
+        .then(function (response) {
+            if (response.ok) {
+                alert("Student updated successfully!");
+            } else {
+                throw new Error("Error updating student: " + response.status);
+            }
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+
+    console.log(student)
 
 });
 
-
-
+retrieveCourses();
+retrieveStudents();
