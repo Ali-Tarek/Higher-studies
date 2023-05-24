@@ -1,11 +1,3 @@
-/* initialize local storage if not exist */
-  
-if(!localStorage.getItem('courses')){
-    localStorage.setItem('courses', JSON.stringify([]));
-}
-/* initialize local storage if not exist */
-
-
 /* Add New Course Section */
 const addBtn = document.getElementById('addCourse');
 
@@ -20,8 +12,22 @@ function createErrorMsg(msg, wrapper){
 
 addBtn.addEventListener('click', (e)=>{
     e.preventDefault();
+    fetch('http://127.0.0.1:8000/courses/')
+    .then((response)=>{
+        return response.json();
+    })
+    .then((courses) =>{
+        // console.log(courses)
+        createCourse(courses);
+    })
+    .catch((error) =>{
+        consolel.log(error);
+    })
+   
+})
+
+function createCourse(courses){
     const fields = document.forms[0].elements;
-    let courses = JSON.parse(localStorage.courses);
     let isValid = true;
     
     document.querySelectorAll('.error').forEach((error)=>{
@@ -73,16 +79,28 @@ addBtn.addEventListener('click', (e)=>{
     
 
 
-    courses.push(newCourse);
+    fetch('http://127.0.0.1:8000/courses/create', {
+        method: 'POST',
+        body: JSON.stringify(newCourse),
+        headers: {
+            "Content-Type": "application/json",
+          },
+    })
+    .then((response) =>{
+        return response.json();
+    })
+    .then((message) =>{
+        // console.log(message);
+        document.forms[0].reset();
+        alert("New Course Added");
+    })
+    .catch((error) =>{
+        console.log(error);
+    });
 
-    localStorage.setItem('courses', JSON.stringify(courses));
-
-    document.forms[0].reset();
-
-    alert("New Course Added");
-
-})
 
 
+
+}
 /* Add New Course Section */
 
