@@ -152,15 +152,12 @@ navslide();
         course_2.appendChild(option.cloneNode(true));
         course_3.appendChild(option.cloneNode(true));
     });
-
-    console.log(response);
     const sub = document.getElementsByClassName('SignUp');
     sub[0].reset();
     },
     error: function(error) {
     // Handle any errors
     console.error(error);
-    alert('Error: Failed to add student');
     },
 });
 

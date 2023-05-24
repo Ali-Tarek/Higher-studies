@@ -12,22 +12,36 @@ const navslide = ()=>{
 
 
 navslide();
+$.ajax({
+    url:"http://127.0.0.1:8000/courses/",
+    type:"GET",
+    success: function(response) {
+        document.getElementById("courses-Count").innerText =response.length;
+    },
+    error: function(error) {
+    // Handle any errors
+    console.error(error);
+    },
+});
+$.ajax({
+    url:"http://127.0.0.1:8000/students/",
+    type:"GET",
+    success: function(response) {
+        let noOfActive = 0;
+       response.forEach(student => {
+        if(student.status == 'A')
+        {
+            noOfActive++;
+        }
+       });
+       document.getElementById("All-Students").innerText = Number(response.length);
+       document.getElementById("Active-Students").innerText = Number(noOfActive);
 
-const Students = JSON.parse(localStorage.getItem('students'));
-const AllCourses = JSON.parse(localStorage.getItem("courses"));
-const No_of_students = Students.length;
-const No_Of_Courses = AllCourses.length;
-let No_Of_Active = 0;
-
-for (const stu of Students) {
-    if(stu.Active )
-    {
-        No_Of_Active++;
-    }
-}
-
-document.getElementById("All-Students").innerText = Number(No_of_students);
-document.getElementById("Active-Students").innerText = Number(No_Of_Active);
-document.getElementById("courses-Count").innerText = Number(No_Of_Courses);
+   
+    },
+    error: function(error) {
+    console.error(error);
+    },
+});
 
 
