@@ -14,16 +14,15 @@ function WriteTable() {
                 render += "<td>" + data[i].lectureDay + "</td>";
                 render += "<td>" + data[i].hallNumber + "</td>";
             }
+            render+="</tbody></table>";
+            var dynamictable = document.getElementById("dynamictable");
+            dynamictable.innerHTML = render;
         }
-    }
+    };
     //var data = JSON.parse(localStorage.getItem('courses'));
 
     myRequest.open('GET', 'http://127.0.0.1:8000/courses/',true);
     myRequest.send();
-    
-    render+="</tbody></table>";
-    var dynamictable = document.getElementById("dynamictable");
-    dynamictable.innerHTML = render; 
 }
 
 function search(){
