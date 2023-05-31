@@ -9,10 +9,10 @@ function WriteTable() {
 
             for (i = 0; i < data.length; i++) {
                 render += "<tr><td>" + data[i].name + "</td><td>" + data[i].id + " </td>";
-                render += "<td>" + data[i].numberOfHours + "</td>";
+                render += "<td>" + data[i].hours + "</td>";
                 render += "<td>" + data[i].department + "</td>";
-                render += "<td>" + data[i].lectureDay + "</td>";
-                render += "<td>" + data[i].hallNumber + "</td>";
+                render += "<td>" + data[i].day + "</td>";
+                render += "<td>" + data[i].hallnumber + "</td>";
             }
             render+="</tbody></table>";
             var dynamictable = document.getElementById("dynamictable");
