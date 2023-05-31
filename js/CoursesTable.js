@@ -22,6 +22,7 @@ function WriteTable() {
     myRequest.send();
     
     render+="</tbody></table>";
+    var dynamictable = document.getElementById("dynamictable");
     dynamictable.innerHTML = render; 
 }
 
