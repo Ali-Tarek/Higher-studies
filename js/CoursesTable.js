@@ -27,7 +27,7 @@ function WriteTable() {
 
 function search(){
     var cName = document.getElementById("search1");
-    var filter = cName.nodeValue.toUpperCase();
+    var filter = cName.value.toUpperCase();
     var table = document.getElementById("table1");
     var rows = table.getElementsByTagName("tr");
 
