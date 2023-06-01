@@ -20,7 +20,6 @@ function WriteTable() {
 
         }
     };
-    //var data = JSON.parse(localStorage.getItem('courses'));
 
     myRequest.open('GET', 'http://127.0.0.1:8000/courses/', true);
     myRequest.send();
@@ -37,10 +36,10 @@ function search() {
 
         if (data) {
             if (filter === '') {
-                // Display the row using the original display value
+
                 rows[i].style.display = rows[i].getAttribute('data-original-display');
-            } else if (filter === data[0].textContent.toUpperCase()) {
-                // Save the original display value if it's not already saved
+            } else if (data[0].textContent.toUpperCase().includes(filter)) {
+
                 if (!rows[i].hasAttribute('data-original-display')) {
                     rows[i].setAttribute('data-original-display', rows[i].style.display);
                 }
