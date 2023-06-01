@@ -1,4 +1,4 @@
-function WriteTable() {
+function WriteTable(search) {
     var render = "<table class = \"courses\">";
     render += "<thead><tr><th>Course Name</th><th>Course ID</th><th>Number of hours</th><th>Department</th><th>Lecture Day</th><th>Hall Number</th></thead>";
     render+="<tbody>";
@@ -17,6 +17,8 @@ function WriteTable() {
             render+="</tbody></table>";
             var dynamictable = document.getElementById("dynamictable");
             dynamictable.innerHTML = render;
+
+            search();
         }
     };
     //var data = JSON.parse(localStorage.getItem('courses'));
@@ -28,10 +30,10 @@ function WriteTable() {
 function search(){
     var cName = document.getElementById("search1");
     var filter = cName.value.toUpperCase();
-    var table = document.getElementById("table1");
+    var table = document.getElementsByClassName("courses")[0];
     var rows = table.getElementsByTagName("tr");
 
-    for (let i = 0; i < rows.length; i++) {
+    for (let i = 1; i < rows.length; i++) {
         const data = rows[i].getElementsByTagName("td");
 
         if (filter == data[0].textContent.toUpperCase()){
@@ -43,4 +45,4 @@ function search(){
     }
 }
 
-WriteTable();
+WriteTable(search);
